@@ -1,5 +1,4 @@
 name: Power BI Dataset Pipeline
-
 on:
   push:
     branches:
