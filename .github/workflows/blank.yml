@@ -1,24 +1,25 @@
-name: Github Actions Example
+name: Power BI Dataset Pipeline
 
 on:
-  pull_request:
   push:
-    branches: 
-      - master
-      - develop
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
-  test:
-    name: Running Units Tests
-    runs-on: ubuntu-latest
+  build:
+    name: Power BI Build Job
+    runs-on: windows-latest
 
     steps:
-    - uses: actions/checkout@v1
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
-    - name: Install
-      run: npm install
-    - name: Test
-      run: npm test
+      # 4. Download Tabular Editor
+      - name: Download Tabular Editor
+        run: |
+          $TabularEditorUrl = "https://github.com/otykier/TabularEditor/releases/download/2.16.4/TabularEditor.Portable.zip"
+          $DownloadDestination = Join-Path (Get-Location) "TabularEditor.zip"
+          Invoke-WebRequest -Uri $TabularEditorUrl -OutFile $DownloadDestination
+          Expand-Archive -Path $DownloadDestination -DestinationPath (Get-Location)
+          Remove-Item $DownloadDestination
+        shell: pwsh
