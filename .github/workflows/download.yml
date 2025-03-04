@@ -1,0 +1,26 @@
+name: Tabular Editor Setup
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:  # Allows manual trigger
+
+jobs:
+  setup-tabular-editor:
+    runs-on: windows-latest  # Tabular Editor requires Windows
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Download and Install Tabular Editor 2
+        run: |
+          Invoke-WebRequest -Uri "https://github.com/TabularEditor/TabularEditor/releases/latest/download/TabularEditor.exe" -OutFile "TabularEditor.exe"
+          echo "Tabular Editor downloaded successfully."
+        shell: pwsh
+
+      - name: Check Tabular Editor Version
+        run: |
+          ./TabularEditor.exe -V
+        shell: pwsh
