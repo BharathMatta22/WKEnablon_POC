@@ -1,23 +1,26 @@
-name: Tabular Editor Setup
-
+name: Power BI Dataset Pipeline
 on:
   push:
     branches:
       - main
-  workflow_dispatch:  # Allows manual trigger
+  pull_request:
+    branches:
+      - main
 
 jobs:
-  setup-tabular-editor:
-    runs-on: windows-latest  # Tabular Editor requires Windows
+  build:
+    name: Power BI Build Job
+    runs-on: windows-latest
 
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v3
-
-      - name: Download and Install Tabular Editor 2
+      # 4. Download Tabular Editor
+      - name: Download Tabular Editor
         run: |
-          Invoke-WebRequest -Uri "https://github.com/TabularEditor/TabularEditor/releases/latest/download/TabularEditor.exe" -OutFile "TabularEditor.exe"
-          echo "Tabular Editor downloaded successfully."
+          $TabularEditorUrl = "https://github.com/otykier/TabularEditor/releases/download/2.16.4/TabularEditor.Portable.zip"
+          $DownloadDestination = Join-Path (Get-Location) "TabularEditor.zip"
+          Invoke-WebRequest -Uri $TabularEditorUrl -OutFile $DownloadDestination
+          Expand-Archive -Path $DownloadDestination -DestinationPath (Get-Location)
+          Remove-Item $DownloadDestination
         shell: pwsh
 
       - name: Check Tabular Editor Version
