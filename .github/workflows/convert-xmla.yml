@@ -8,7 +8,7 @@ jobs:
 
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v1
 
       - name: Install Tabular Editor
         run: choco install tabular-editor -y
@@ -23,7 +23,7 @@ jobs:
         shell: powershell
 
       - name: Upload BIM File as Artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v1
         with:
           name: model-bim
           path: Model.bim
