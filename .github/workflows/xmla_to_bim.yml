@@ -8,7 +8,7 @@ jobs:
 
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v1  # Checks out the repository
+        uses: actions/checkout@v4  # Checks out the repository
 
       - name: Generate Bim file using XMLA file
         shell: pwsh  # Specifies using PowerShell
