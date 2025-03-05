@@ -1,0 +1,21 @@
+name: Generate Bim file using XMLA file
+
+on: [workflow_dispatch]
+
+jobs:
+  generate-bim:
+    runs-on: windows-latest  # Ensure a Windows runner is used
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4  # Checks out the repository
+
+      - name: Generate Bim file using XMLA file
+        shell: pwsh  # Specifies using PowerShell
+        run: |
+          # Generate Bim file using XMLA file
+          $PBIDataset = "${{ github.workspace }}\aa.xmla"
+          $BimOutput = "${{ github.workspace }}\Model.bim"
+
+          # Run TabularEditor to generate .bim file
+          TabularEditor.exe $PBIDataset -B $BimOutput
