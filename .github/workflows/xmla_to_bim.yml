@@ -16,6 +16,7 @@ jobs:
           # Generate Bim file using XMLA file
           $PBIDataset = "${{ github.workspace }}\aa.xmla"
           $BimOutput = "${{ github.workspace }}\Model.bim"
+          $TabularEditor = "${{ github.workspace }}\TabularEditor.exe"
 
           # Run TabularEditor to generate .bim file
-          TabularEditor.exe $PBIDataset -B $BimOutput
+          $TabularEditor $PBIDataset -B $BimOutput
