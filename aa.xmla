@@ -1,0 +1,1865 @@
+{
+  "createOrReplace": {
+    "object": {
+      "database": "DND - new copy"
+    },
+    "database": {
+      "name": "DND - new copy",
+      "id": "b19b039a-fbab-40b0-9207-405a3008f181",
+      "compatibilityLevel": 1567,
+      "model": {
+        "culture": "en-IN",
+        "dataAccessOptions": {
+          "legacyRedirects": true,
+          "returnErrorValuesAsNull": true
+        },
+        "defaultPowerBIDataSourceVersion": "powerBI_V3",
+        "discourageImplicitMeasures": true,
+        "sourceQueryCulture": "en-US",
+        "tables": [
+          {
+            "name": "Location",
+            "lineageTag": "7b5ac39c-8d46-4a4b-8e53-7afcd453bb69",
+            "columns": [
+              {
+                "name": "Store ID",
+                "dataType": "int64",
+                "sourceColumn": "Store ID",
+                "formatString": "0",
+                "lineageTag": "a9a29088-3fbe-47c1-be89-23fbfe8f7649",
+                "summarizeBy": "none",
+                "annotations": [
+                  {
+                    "name": "SummarizationSetBy",
+                    "value": "Automatic"
+                  },
+                  {
+                    "name": "BestPracticeAnalyzer_IgnoreRules",
+                    "value": "{\"RuleIDs\":[\"HIDE_FACT_TABLE_COLUMNS\"]}"
+                  }
+                ]
+              },
+              {
+                "name": "Store Description",
+                "dataType": "string",
+                "sourceColumn": "Store Description",
+                "lineageTag": "744dea28-89b9-4ba2-935c-bf81c371f6f9",
+                "summarizeBy": "none",
+                "annotations": [
+                  {
+                    "name": "SummarizationSetBy",
+                    "value": "Automatic"
+                  }
+                ]
+              },
+              {
+                "name": "District Description",
+                "dataType": "string",
+                "sourceColumn": "District Description",
+                "lineageTag": "98aae5e7-a55d-4cfa-9cb2-f080784268cd",
+                "summarizeBy": "none",
+                "annotations": [
+                  {
+                    "name": "SummarizationSetBy",
+                    "value": "Automatic"
+                  }
+                ]
+              },
+              {
+                "name": "Region Description",
+                "dataType": "string",
+                "sourceColumn": "Region Description",
+                "lineageTag": "7e9b66c4-fa2a-4dd9-a161-ab888bb68efd",
+                "summarizeBy": "none",
+                "annotations": [
+                  {
+                    "name": "SummarizationSetBy",
+                    "value": "Automatic"
+                  }
+                ]
+              },
+              {
+                "name": "Division Description",
+                "dataType": "string",
+                "sourceColumn": "Division Description",
+                "lineageTag": "3e28504f-4b7a-4a5d-b871-061ead7ad74f",
+                "summarizeBy": "none",
+                "annotations": [
+                  {
+                    "name": "SummarizationSetBy",
+                    "value": "Automatic"
+                  }
+                ]
+              },
+              {
+                "name": "District ID",
+                "dataType": "int64",
+                "sourceColumn": "District ID",
+                "formatString": "0",
+                "lineageTag": "d641372b-c445-4ef5-b0fc-0283b5e0c4f3",
+                "summarizeBy": "none",
+                "annotations": [
+                  {
+                    "name": "SummarizationSetBy",
+                    "value": "Automatic"
+                  }
+                ]
+              },
+              {
+                "name": "Region ID",
+                "dataType": "int64",
+                "sourceColumn": "Region ID",
+                "formatString": "0",
+                "lineageTag": "7175c01f-4988-4b28-b86c-edd415f6c31a",
+                "summarizeBy": "none",
+                "annotations": [
+                  {
+                    "name": "SummarizationSetBy",
+                    "value": "Automatic"
+                  }
+                ]
+              },
+              {
+                "name": "Division ID",
+                "dataType": "int64",
+                "sourceColumn": "Division ID",
+                "formatString": "0",
+                "lineageTag": "39758076-6778-49cd-a3cc-48ab0001205a",
+                "summarizeBy": "none",
+                "annotations": [
+                  {
+                    "name": "SummarizationSetBy",
+                    "value": "Automatic"
+                  }
+                ]
+              },
+              {
+                "name": "Location Key",
+                "dataType": "string",
+                "isHidden": true,
+                "isKey": true,
+                "sourceColumn": "Location Key",
+                "isAvailableInMdx": false,
+                "lineageTag": "a9ea4aaf-20c3-442e-9963-1575b74105aa",
+                "summarizeBy": "none",
+                "annotations": [
+                  {
+                    "name": "SummarizationSetBy",
+                    "value": "Automatic"
+                  },
+                  {
+                    "name": "BestPracticeAnalyzer_IgnoreRules",
+                    "value": "{\"RuleIDs\":[\"RELATIONSHIP_COLUMNS_SHOULD_BE_OF_INTEGER_DATA_TYPE\"]}"
+                  }
+                ]
+              },
+              {
+                "type": "calculated",
+                "name": "Division",
+                "dataType": "string",
+                "isDataTypeInferred": true,
+                "expression": [
+                  "",
+                  "'Location'[Division ID] & \" - \" & 'Location'[Division Description]"
+                ],
+                "sortByColumn": "Division ID",
+                "lineageTag": "7a5143e7-c327-4775-a25b-14f0c2287b17"
+              },
+              {
+                "type": "calculated",
+                "name": "Region",
+                "dataType": "string",
+                "isDataTypeInferred": true,
+                "expression": [
+                  "",
+                  "'Location'[Region ID] & \" - \" & 'Location'[Region Description]"
+                ],
+                "sortByColumn": "Region ID",
+                "lineageTag": "33728ae2-26ef-4957-9a72-e9bba68f51d8"
+              },
+              {
+                "type": "calculated",
+                "name": "District",
+                "dataType": "string",
+                "isDataTypeInferred": true,
+                "expression": [
+                  "",
+                  "'Location'[District ID] & \" - \" & 'Location'[District Description]"
+                ],
+                "sortByColumn": "District ID",
+                "lineageTag": "9ce28a63-f6fc-4068-bfa6-8bb2072811e8"
+              },
+              {
+                "type": "calculated",
+                "name": "Store",
+                "dataType": "string",
+                "isDataTypeInferred": true,
+                "expression": [
+                  "",
+                  "'Location'[Store ID] & \" - \" & 'Location'[Store Description]"
+                ],
+                "sortByColumn": "Store ID",
+                "lineageTag": "39a126e8-1810-47ad-98a1-ee9f5b5326a7"
+              },
+              {
+                "name": "Location Close Date",
+                "dataType": "dateTime",
+                "sourceColumn": "Location Close Date",
+                "formatString": "m/d/yyyy",
+                "lineageTag": "5042a8ed-f6cb-4fcc-a4a2-5edf335879ec",
+                "summarizeBy": "none",
+                "annotations": [
+                  {
+                    "name": "BestPracticeAnalyzer_IgnoreRules",
+                    "value": "{\"RuleIDs\":[\"DATECOLUMN_FORMATSTRING\"]}"
+                  }
+                ]
+              },
+              {
+                "name": "Location Open Date",
+                "dataType": "dateTime",
+                "sourceColumn": "Location Open Date",
+                "formatString": "m/d/yyyy",
+                "lineageTag": "d000c150-a695-4691-a85e-15c826192b22",
+                "summarizeBy": "none",
+                "annotations": [
+                  {
+                    "name": "BestPracticeAnalyzer_IgnoreRules",
+                    "value": "{\"RuleIDs\":[\"DATECOLUMN_FORMATSTRING\"]}"
+                  }
+                ]
+              }
+            ],
+            "partitions": [
+              {
+                "name": "Location",
+                "mode": "import",
+                "source": {
+                  "type": "m",
+                  "expression": [
+                    "let",
+                    "  Source = Value.NativeQuery(",
+                    "    Snowflake.Databases(",
+                    "      \"staplesusretail.east-us-2.azure.snowflakecomputing.com\", ",
+                    "      \"\" & Snowflake_Account_Warehouse_Name & \"\",",
+                    "      [Role =\"\" & Snowflake_Account_Role_Name & \"\"]",
+                    "    ){[Name = \"RTL_RPT_PRD_DB\"]}[Data], ",
+                    "    \"SELECT UL.LOCN_KY::TEXT AS LOCN_KY#(lf)#(tab),UL.LOCN_ID#(lf)#(tab),UL.LOCN_NM#(lf)#(tab),UL.NA_LOCN_HRC_DSTRCT_DSCR#(lf)#(tab),UL.NA_LOCN_HRC_DSTRCT_NMB#(lf)#(tab),UL.NA_LOCN_HRC_RGN_DSCR#(lf)#(tab),UL.NA_LOCN_HRC_RGN_NMB#(lf)#(tab),UL.NA_LOCN_HRC_DIV_DSCR#(lf)#(tab),UL.NA_LOCN_HRC_DIV_NMB#(lf)#(tab),UL.LOCN_CLOS_DT#(lf)#(tab),UL.LOCN_OPN_DT#(lf)FROM RTL_RPT_PRD_DB.DWH_RPT.D_USRTL_LOCN_CV AS UL#(lf)WHERE UL.NA_LOCN_HRC_DIV_NMB IN (#(lf)#(tab)#(tab)1#(lf)#(tab)#(tab),2#(lf)#(tab)#(tab),3#(lf)#(tab)#(tab))\", ",
+                    "    null, ",
+                    "    [EnableFolding = true]",
+                    "  ), ",
+                    "  #\"Renamed Columns\" = Table.RenameColumns(",
+                    "    Source, ",
+                    "    {",
+                    "      {\"LOCN_ID\", \"Store ID\"}, ",
+                    "      {\"LOCN_NM\", \"Store Description\"}, ",
+                    "      {\"NA_LOCN_HRC_DIV_NMB\", \"Division ID\"}, ",
+                    "      {\"NA_LOCN_HRC_DIV_DSCR\", \"Division Description\"}, ",
+                    "      {\"NA_LOCN_HRC_RGN_NMB\", \"Region ID\"}, ",
+                    "      {\"NA_LOCN_HRC_RGN_DSCR\", \"Region Description\"}, ",
+                    "      {\"NA_LOCN_HRC_DSTRCT_NMB\", \"District ID\"}, ",
+                    "      {\"NA_LOCN_HRC_DSTRCT_DSCR\", \"District Description\"}, ",
+                    "      {\"LOCN_KY\", \"Location Key\"}, ",
+                    "      {\"LOCN_CLOS_DT\", \"Location Close Date\"}, ",
+                    "      {\"LOCN_OPN_DT\", \"Location Open Date\"}",
+                    "    }",
+                    "  )",
+                    "in",
+                    "  #\"Renamed Columns\""
+                  ]
+                },
+                "annotations": [
+                  {
+                    "name": "BestPracticeAnalyzer_IgnoreRules",
+                    "value": "{\"RuleIDs\":[\"MINIMIZE_POWER_QUERY_TRANSFORMATIONS\"]}"
+                  }
+                ]
+              }
+            ],
+            "annotations": [
+              {
+                "name": "PBI_ResultType",
+                "value": "Table"
+              },
+              {
+                "name": "PBI_NavigationStepName",
+                "value": "Navigation"
+              },
+              {
+                "name": "BestPracticeAnalyzer_IgnoreRules",
+                "value": "{\"RuleIDs\":[\"SNOWFLAKE_SCHEMA_ARCHITECTURE\"]}"
+              }
+            ]
+          },
+          {
+            "name": "Fiscal Calendar Week",
+            "lineageTag": "282595af-b05f-41ae-b24d-28faa362132e",
+            "columns": [
+              {
+                "name": "Week Key",
+                "dataType": "int64",
+                "isHidden": true,
+                "isKey": true,
+                "sourceColumn": "Week Key",
+                "formatString": "#,##0",
+                "isAvailableInMdx": false,
+                "lineageTag": "c84ad564-c195-4247-aae6-c4839c4625e3",
+                "summarizeBy": "none",
+                "annotations": [
+                  {
+                    "name": "SummarizationSetBy",
+                    "value": "Automatic"
+                  }
+                ]
+              },
+              {
+                "name": "Prior 2 Fiscal Time Indicator",
+                "dataType": "boolean",
+                "sourceColumn": "Prior 2 Fiscal Time Indicator",
+                "lineageTag": "ddbb2c89-183d-4b45-a8fe-c04392a17ee6",
+                "summarizeBy": "none",
+                "annotations": [
+                  {
+                    "name": "SummarizationSetBy",
+                    "value": "Automatic"
+                  }
+                ]
+              },
+              {
+                "name": "Fiscal Calendar Current Year Indicator",
+                "dataType": "boolean",
+                "sourceColumn": "Fiscal Calendar Current Year Indicator",
+                "lineageTag": "f134f9fd-e5ce-4fd2-9352-9cfcaf3c2614",
+                "summarizeBy": "none",
+                "annotations": [
+                  {
+                    "name": "SummarizationSetBy",
+                    "value": "Automatic"
+                  }
+                ]
+              },
+              {
+                "name": "Fiscal Calendar Current Week Indicator",
+                "dataType": "boolean",
+                "sourceColumn": "Fiscal Calendar Current Week Indicator",
+                "lineageTag": "3c3f211c-b3f2-4df6-b28e-c14a2cca6a79",
+                "summarizeBy": "none",
+                "annotations": [
+                  {
+                    "name": "SummarizationSetBy",
+                    "value": "Automatic"
+                  }
+                ]
+              },
+              {
+                "name": "Fiscal Calendar Prior Week Indicator",
+                "dataType": "boolean",
+                "sourceColumn": "Fiscal Calendar Prior Week Indicator",
+                "lineageTag": "443f3668-cc7d-4711-8807-5419967716cb",
+                "summarizeBy": "none",
+                "annotations": [
+                  {
+                    "name": "SummarizationSetBy",
+                    "value": "Automatic"
+                  }
+                ]
+              },
+              {
+                "name": "Last Year Week Key",
+                "dataType": "int64",
+                "isHidden": true,
+                "sourceColumn": "Last Year Week Key",
+                "formatString": "#,##0",
+                "isAvailableInMdx": false,
+                "lineageTag": "2d1435bc-2458-42a3-b6b5-777cdf8468c3",
+                "summarizeBy": "none",
+                "annotations": [
+                  {
+                    "name": "SummarizationSetBy",
+                    "value": "Automatic"
+                  },
+                  {
+                    "name": "UnderlyingDateTimeDataType",
+                    "value": "Date"
+                  },
+                  {
+                    "name": "PBI_FormatHint",
+                    "value": "{\"isDateTimeCustom\":true}"
+                  },
+                  {
+                    "name": "BestPracticeAnalyzer_IgnoreRules",
+                    "value": "{\"RuleIDs\":[\"MARK_PRIMARY_KEYS\"]}"
+                  }
+                ]
+              },
+              {
+                "name": "Fiscal Week In Period Name",
+                "dataType": "string",
+                "sourceColumn": "Fiscal Week In Period Name",
+                "lineageTag": "9d6c1139-4c2b-40ab-9b91-004921478d23",
+                "summarizeBy": "none",
+                "annotations": [
+                  {
+                    "name": "SummarizationSetBy",
+                    "value": "Automatic"
+                  }
+                ]
+              },
+              {
+                "name": "Calendar Date",
+                "dataType": "dateTime",
+                "sourceColumn": "Calendar Date",
+                "formatString": "m/d/yyyy",
+                "lineageTag": "de299e01-ac32-4f9f-b6f5-594eac4639bb",
+                "summarizeBy": "none",
+                "annotations": [
+                  {
+                    "name": "BestPracticeAnalyzer_IgnoreRules",
+                    "value": "{\"RuleIDs\":[\"ISAVAILABLEINMDX_FALSE_NONATTRIBUTE_COLUMNS\",\"DATECOLUMN_FORMATSTRING\",\"UNNECESSARY_COLUMNS\"]}"
+                  }
+                ]
+              },
+              {
+                "name": "Fiscal Period Name",
+                "dataType": "string",
+                "isHidden": true,
+                "sourceColumn": "Fiscal Period Name",
+                "lineageTag": "dd4e0a41-fc13-4543-9369-db600c5c7bf1",
+                "summarizeBy": "none",
+                "annotations": [
+                  {
+                    "name": "SummarizationSetBy",
+                    "value": "Automatic"
+                  }
+                ]
+              },
+              {
+                "name": "Fiscal Quarter Name",
+                "dataType": "string",
+                "isHidden": true,
+                "sourceColumn": "Fiscal Quarter Name",
+                "lineageTag": "099e97a9-5516-496a-b1ea-eb5c3d1be31b",
+                "summarizeBy": "none",
+                "annotations": [
+                  {
+                    "name": "SummarizationSetBy",
+                    "value": "Automatic"
+                  }
+                ]
+              },
+              {
+                "name": "Fiscal Year",
+                "dataType": "int64",
+                "isHidden": true,
+                "sourceColumn": "Fiscal Year",
+                "formatString": "#,##0",
+                "lineageTag": "55347f12-3484-4a41-9021-16241a30a98d",
+                "summarizeBy": "none",
+                "annotations": [
+                  {
+                    "name": "SummarizationSetBy",
+                    "value": "Automatic"
+                  },
+                  {
+                    "name": "PBI_FormatHint",
+                    "value": "{\"isGeneralNumber\":true}"
+                  }
+                ]
+              },
+              {
+                "name": "Difference From Current Week",
+                "dataType": "int64",
+                "isHidden": true,
+                "sourceColumn": "Difference From Current Week",
+                "formatString": "#,##0",
+                "isAvailableInMdx": false,
+                "lineageTag": "21efbc35-cb0e-4488-9742-efdb9d052f40",
+                "summarizeBy": "none",
+                "annotations": [
+                  {
+                    "name": "SummarizationSetBy",
+                    "value": "Automatic"
+                  },
+                  {
+                    "name": "BestPracticeAnalyzer_IgnoreRules",
+                    "value": "{\"RuleIDs\":[\"UNNECESSARY_COLUMNS\"]}"
+                  }
+                ]
+              },
+              {
+                "name": "Week End Date",
+                "dataType": "dateTime",
+                "isHidden": true,
+                "sourceColumn": "Week End Date",
+                "formatString": "m/d/yyyy",
+                "isAvailableInMdx": false,
+                "lineageTag": "e7c2e504-dd12-478f-84cf-3b0468d75074"
+              }
+            ],
+            "partitions": [
+              {
+                "name": "Fiscal Calendar Week",
+                "mode": "import",
+                "source": {
+                  "type": "m",
+                  "expression": [
+                    "let",
+                    "  Source = Value.NativeQuery(",
+                    "    Snowflake.Databases(",
+                    "      \"staplesusretail.east-us-2.azure.snowflakecomputing.com\", ",
+                    "      \"\" & Snowflake_Account_Warehouse_Name & \"\", ",
+                    "      [Role = \"\" & Snowflake_Account_Role_Name & \"\"]",
+                    "    ){[Name = \"RTL_RPT_PRD_DB\"]}[Data], ",
+                    "    \"WITH CURRENT_FISCAL_YEAR#(lf)AS (#(lf)#(tab)SELECT FCD.FSC_YR#(lf)#(tab)FROM RTL_RPT_PRD_DB.DWH_RPT.D_FSC_CAL_DAY_CV AS FCD#(lf)#(tab)WHERE UPPER(TRIM(FCD.FSC_CAL_CURR_TM_IND)) = 'Y'#(lf)#(tab))#(lf)SELECT FCWTY.FSC_WK_TM_KY#(lf)#(tab),FCWTY.CAL_DT#(lf)#(tab),FCWTY.FSC_WK_END_DT#(lf)#(tab),CONCAT (#(lf)#(tab)#(tab)'Q'#(lf)#(tab)#(tab),FCWTY.FSC_QTR_IN_YR_NUM#(lf)#(tab)#(tab)) AS FSC_QTR_NM#(lf)#(tab),FCWTY.FSC_PRD_NM#(lf)#(tab),FCWTY.DIFF_FROM_CURR_WK#(lf)#(tab),CASE #(lf)#(tab)#(tab)WHEN (UPPER(TRIM(FCWTY.PR_02_FSC_TM_IND))) = 'Y'#(lf)#(tab)#(tab)#(tab)THEN TRUE#(lf)#(tab)#(tab)ELSE FALSE#(lf)#(tab)#(tab)END AS PR_02_FSC_TM_IND#(lf)#(tab),CASE #(lf)#(tab)#(tab)WHEN (UPPER(TRIM(FCWTY.FSC_CAL_CURR_YR_IND))) = 'Y'#(lf)#(tab)#(tab)#(tab)THEN TRUE#(lf)#(tab)#(tab)ELSE FALSE#(lf)#(tab)#(tab)END AS FSC_CAL_CURR_YR_IND#(lf)#(tab),CASE #(lf)#(tab)#(tab)WHEN (UPPER(TRIM(FCWTY.FSC_CAL_CURR_WK_IND))) = 'Y'#(lf)#(tab)#(tab)#(tab)THEN TRUE#(lf)#(tab)#(tab)ELSE FALSE#(lf)#(tab)#(tab)END AS FSC_CAL_CURR_WK_IND#(lf)#(tab),CASE #(lf)#(tab)#(tab)WHEN (UPPER(TRIM(FCWTY.FSC_CAL_PR_WK_IND))) = 'Y'#(lf)#(tab)#(tab)#(tab)THEN TRUE#(lf)#(tab)#(tab)ELSE FALSE#(lf)#(tab)#(tab)END AS FSC_CAL_PR_WK_IND#(lf)#(tab),CONCAT (#(lf)#(tab)#(tab)FCWTY.FSC_PRD_NM#(lf)#(tab)#(tab),'W'#(lf)#(tab)#(tab),FCWTY.FSC_WK_IN_PRD_NUM#(lf)#(tab)#(tab)) AS FSC_PRD_WK_NM#(lf)#(tab),FCWTY.FSC_YR#(lf)#(tab),CASE #(lf)#(tab)#(tab)WHEN FCWTY.FSC_WK_TM_KY = 2023125#(lf)#(tab)#(tab)#(tab)THEN 9999121#(lf)#(tab)#(tab)ELSE FCWLY.FSC_WK_TM_KY#(lf)#(tab)#(tab)END AS LY_FSC_WK_TM_KY#(lf)FROM RTL_RPT_PRD_DB.DWH_RPT.D_FSC_CAL_WK_CV AS FCWTY#(lf)LEFT JOIN RTL_RPT_PRD_DB.DWH_RPT.D_FSC_CAL_WK_CV AS FCWLY ON FCWTY.PR_FSC_YR_CAL_DT = FCWLY.CAL_DT#(lf)INNER JOIN CURRENT_FISCAL_YEAR AS CFY ON FCWTY.FSC_YR >= CFY.FSC_YR - 2#(lf)#(tab)AND FCWTY.CAL_DT < CURRENT_DATE + 7\", ",
+                    "    null, ",
+                    "    [EnableFolding = true]",
+                    "  ), ",
+                    "  #\"Renamed Columns\" = Table.RenameColumns(",
+                    "    Source, ",
+                    "    {",
+                    "      {\"FSC_WK_TM_KY\", \"Week Key\"}, ",
+                    "      {\"CAL_DT\", \"Calendar Date\"}, ",
+                    "      {\"FSC_WK_END_DT\", \"Week End Date\"},",
+                    "      {\"FSC_CAL_CURR_YR_IND\", \"Fiscal Calendar Current Year Indicator\"}, ",
+                    "      {\"PR_02_FSC_TM_IND\", \"Prior 2 Fiscal Time Indicator\"}, ",
+                    "      {\"FSC_CAL_CURR_WK_IND\", \"Fiscal Calendar Current Week Indicator\"}, ",
+                    "      {\"FSC_CAL_PR_WK_IND\", \"Fiscal Calendar Prior Week Indicator\"}, ",
+                    "      {\"FSC_PRD_WK_NM\", \"Fiscal Week In Period Name\"}, ",
+                    "      {\"LY_FSC_WK_TM_KY\", \"Last Year Week Key\"}, ",
+                    "      {\"FSC_QTR_NM\", \"Fiscal Quarter Name\"}, ",
+                    "      {\"FSC_PRD_NM\", \"Fiscal Period Name\"}, ",
+                    "      {\"FSC_YR\", \"Fiscal Year\"}, ",
+                    "      {\"DIFF_FROM_CURR_WK\", \"Difference From Current Week\"}",
+                    "    }",
+                    "  )",
+                    "in",
+                    "  #\"Renamed Columns\""
+                  ]
+                },
+                "annotations": [
+                  {
+                    "name": "BestPracticeAnalyzer_IgnoreRules",
+                    "value": "{\"RuleIDs\":[\"MINIMIZE_POWER_QUERY_TRANSFORMATIONS\"]}"
+                  }
+                ]
+              }
+            ],
+            "hierarchies": [
+              {
+                "name": "Fiscal Date Hierarchy",
+                "lineageTag": "e5962cfb-1c76-483f-89d7-9bafc1af3db1",
+                "levels": [
+                  {
+                    "name": "Fiscal Quarter Name",
+                    "ordinal": 1,
+                    "column": "Fiscal Quarter Name",
+                    "lineageTag": "d0ac1304-e85b-444b-b222-515a5247df36"
+                  },
+                  {
+                    "name": "Fiscal Period Name",
+                    "ordinal": 2,
+                    "column": "Fiscal Period Name",
+                    "lineageTag": "0d398147-b2af-4808-b1b6-712298a07e5a"
+                  },
+                  {
+                    "name": "Fiscal Week In Period Name",
+                    "ordinal": 3,
+                    "column": "Fiscal Week In Period Name",
+                    "lineageTag": "22cea865-5fe5-4344-8161-a14432307630"
+                  },
+                  {
+                    "name": "Fiscal Year Name",
+                    "ordinal": 0,
+                    "column": "Fiscal Year",
+                    "lineageTag": "3ba0c1a7-b62a-4926-b1b9-bc6517b00709"
+                  }
+                ]
+              }
+            ],
+            "annotations": [
+              {
+                "name": "PBI_NavigationStepName",
+                "value": "Navigation"
+              },
+              {
+                "name": "PBI_ResultType",
+                "value": "Table"
+              },
+              {
+                "name": "BestPracticeAnalyzer_IgnoreRules",
+                "value": "{\"RuleIDs\":[\"DATE/CALENDAR_TABLES_SHOULD_BE_MARKED_AS_A_DATE_TABLE\"]}"
+              }
+            ]
+          },
+          {
+            "name": "Product",
+            "lineageTag": "55da2c62-6710-464e-b71c-f8dd97931f62",
+            "columns": [
+              {
+                "name": "Division ID",
+                "dataType": "int64",
+                "sourceColumn": "Division ID",
+                "formatString": "#,##0",
+                "lineageTag": "ac295622-3d1f-458a-bffd-8aa816353f25",
+                "summarizeBy": "none",
+                "annotations": [
+                  {
+                    "name": "SummarizationSetBy",
+                    "value": "Automatic"
+                  }
+                ]
+              },
+              {
+                "name": "Division Description",
+                "dataType": "string",
+                "sourceColumn": "Division Description",
+                "lineageTag": "6742a54b-86c3-455b-bad5-d4782754854f",
+                "summarizeBy": "none",
+                "annotations": [
+                  {
+                    "name": "SummarizationSetBy",
+                    "value": "Automatic"
+                  }
+                ]
+              },
+              {
+                "name": "Department ID",
+                "dataType": "string",
+                "sourceColumn": "Department ID",
+                "lineageTag": "0f895a19-1869-4178-bb8a-660ad81e112d",
+                "summarizeBy": "none",
+                "annotations": [
+                  {
+                    "name": "SummarizationSetBy",
+                    "value": "Automatic"
+                  }
+                ]
+              },
+              {
+                "name": "Department Description",
+                "dataType": "string",
+                "sourceColumn": "Department Description",
+                "lineageTag": "0b9ef114-648d-4ace-87ec-ea8425f5dfb0",
+                "summarizeBy": "none",
+                "annotations": [
+                  {
+                    "name": "SummarizationSetBy",
+                    "value": "Automatic"
+                  }
+                ]
+              },
+              {
+                "name": "Class ID",
+                "dataType": "string",
+                "sourceColumn": "Class ID",
+                "lineageTag": "e965c11f-0953-421b-af31-5ebc1e2bc367",
+                "summarizeBy": "none",
+                "annotations": [
+                  {
+                    "name": "SummarizationSetBy",
+                    "value": "Automatic"
+                  }
+                ]
+              },
+              {
+                "name": "Class Description",
+                "dataType": "string",
+                "sourceColumn": "Class Description",
+                "lineageTag": "6a4d6f9f-66f0-4b0c-8b52-3b48f6fab49a",
+                "summarizeBy": "none",
+                "annotations": [
+                  {
+                    "name": "SummarizationSetBy",
+                    "value": "Automatic"
+                  }
+                ]
+              },
+              {
+                "name": "Class Key",
+                "dataType": "string",
+                "isHidden": true,
+                "isKey": true,
+                "sourceColumn": "Class Key",
+                "isAvailableInMdx": false,
+                "lineageTag": "3a5440dd-9de3-4781-ae76-d7874f5c08eb",
+                "summarizeBy": "none",
+                "annotations": [
+                  {
+                    "name": "SummarizationSetBy",
+                    "value": "Automatic"
+                  },
+                  {
+                    "name": "PBI_FormatHint",
+                    "value": "{\"isGeneralNumber\":true}"
+                  },
+                  {
+                    "name": "BestPracticeAnalyzer_IgnoreRules",
+                    "value": "{\"RuleIDs\":[\"RELATIONSHIP_COLUMNS_SHOULD_BE_OF_INTEGER_DATA_TYPE\"]}"
+                  }
+                ]
+              },
+              {
+                "type": "calculated",
+                "name": "Division (Sales & Margin)",
+                "dataType": "string",
+                "expression": [
+                  "VAR Division_Description =",
+                  "    IF (",
+                  "        'Product'[Class ID] IN { \"405\", \"861\", \"862\", \"863\",\"DEPT_DFLT_CLS_86\" }, \"TECH SERVICES & WARRANTIE\",",
+                  "        'Product'[Division Description]",
+                  "    )",
+                  "RETURN",
+                  "   'Product'[Division ID (Sales & Margin)] & \" - \" & Division_Description"
+                ],
+                "formatString": "#,##0",
+                "lineageTag": "8a367344-e2f0-45da-9dd9-9e8a3cb7f854",
+                "summarizeBy": "none",
+                "annotations": [
+                  {
+                    "name": "SummarizationSetBy",
+                    "value": "Automatic"
+                  }
+                ]
+              },
+              {
+                "type": "calculated",
+                "name": "Department (Sales & Margin)",
+                "dataType": "string",
+                "expression": "'Product'[Department ID (Sales & Margin)] & \" - \" & 'Product'[Department Description]",
+                "lineageTag": "3921cc91-ed33-4e17-b38f-879fe271b584",
+                "summarizeBy": "none",
+                "annotations": [
+                  {
+                    "name": "SummarizationSetBy",
+                    "value": "Automatic"
+                  }
+                ]
+              },
+              {
+                "type": "calculated",
+                "name": "Class",
+                "dataType": "string",
+                "isDataTypeInferred": true,
+                "expression": [
+                  "",
+                  "'Product'[Class ID] & \" - \" & 'Product'[Class Description]"
+                ],
+                "lineageTag": "2dbca8a2-832f-4aad-967b-bf67ee75c54d",
+                "summarizeBy": "none",
+                "annotations": [
+                  {
+                    "name": "SummarizationSetBy",
+                    "value": "Automatic"
+                  }
+                ]
+              },
+              {
+                "name": "Key Category ID",
+                "dataType": "int64",
+                "sourceColumn": "Key Category ID",
+                "formatString": "#,##0",
+                "lineageTag": "c4bfbbe4-6738-44e1-881b-64442435d1b4",
+                "summarizeBy": "none",
+                "annotations": [
+                  {
+                    "name": "SummarizationSetBy",
+                    "value": "Automatic"
+                  }
+                ]
+              },
+              {
+                "name": "Key Category Description",
+                "dataType": "string",
+                "sourceColumn": "Key Category Description",
+                "sortByColumn": "Key Category ID",
+                "lineageTag": "ab6c88c5-bf93-4d09-a1d4-e6b4040fe30d",
+                "summarizeBy": "none",
+                "annotations": [
+                  {
+                    "name": "SummarizationSetBy",
+                    "value": "Automatic"
+                  }
+                ]
+              },
+              {
+                "type": "calculated",
+                "name": "Division ID (Sales & Margin)",
+                "dataType": "int64",
+                "expression": [
+                  "IF (",
+                  "    'Product'[Class ID] IN { \"405\", \"861\", \"862\", \"863\",\"DEPT_DFLT_CLS_86\"}, 8,",
+                  "    'Product'[Division ID]",
+                  ")"
+                ],
+                "formatString": "#,##0",
+                "lineageTag": "cdfabe95-441c-4e5a-b36e-45f38721cd3f",
+                "summarizeBy": "none",
+                "annotations": [
+                  {
+                    "name": "SummarizationSetBy",
+                    "value": "Automatic"
+                  }
+                ]
+              },
+              {
+                "type": "calculated",
+                "name": "Department ID (Sales & Margin)",
+                "dataType": "string",
+                "expression": "'Product'[Department ID]",
+                "lineageTag": "0b96a9b8-80a3-468c-9803-17bf7248955e",
+                "summarizeBy": "none",
+                "annotations": [
+                  {
+                    "name": "SummarizationSetBy",
+                    "value": "Automatic"
+                  }
+                ]
+              },
+              {
+                "type": "calculated",
+                "name": "Services Filter",
+                "dataType": "boolean",
+                "expression": [
+                  "SWITCH (",
+                  "    TRUE (),",
+                  "    'Product'[Division ID] = 6, TRUE,",
+                  "    'Product'[Department ID] IN { \"86\", \"87\", \"88\" }, TRUE,",
+                  "    'Product'[Class ID]",
+                  "        IN { \"186\", \"274\", \"275\", \"286\", \"287\", \"288\", \"290\", \"291\", \"681\" }, TRUE,",
+                  "    FALSE",
+                  ")"
+                ],
+                "lineageTag": "9005b94c-b704-43ba-a9ad-80501e367a40",
+                "summarizeBy": "min"
+              },
+              {
+                "type": "calculated",
+                "name": "Apple Services Filter",
+                "dataType": "boolean",
+                "expression": [
+                  "SWITCH (",
+                  "    TRUE (),",
+                  "    'Product'[Class ID]",
+                  "        IN { \"304\", \"345\", \"369\", \"375\", \"493\", \"754\", \"755\", \"756\", \"886\" }, TRUE,",
+                  "    FALSE",
+                  ")"
+                ],
+                "lineageTag": "5fe27acd-bb6c-42f4-ac46-f67074d2d8ec",
+                "summarizeBy": "min"
+              },
+              {
+                "name": "Print Product Flag",
+                "dataType": "boolean",
+                "isHidden": true,
+                "sourceColumn": "Print Product Flag",
+                "isAvailableInMdx": false,
+                "lineageTag": "543f31fb-dfd0-42a6-a285-11ebf28bb486",
+                "summarizeBy": "none",
+                "annotations": [
+                  {
+                    "name": "SummarizationSetBy",
+                    "value": "Automatic"
+                  }
+                ]
+              }
+            ],
+            "partitions": [
+              {
+                "name": "Product",
+                "mode": "import",
+                "source": {
+                  "type": "m",
+                  "expression": [
+                    "let",
+                    "  Source = Value.NativeQuery(",
+                    "    Snowflake.Databases(",
+                    "      \"staplesusretail.east-us-2.azure.snowflakecomputing.com\", ",
+                    "      \"\" & Snowflake_Account_Warehouse_Name & \"\", ",
+                    "      [Role = \"\" & Snowflake_Account_Role_Name & \"\"]",
+                    "    ){[Name = \"RTL_RPT_PRD_DB\"]}[Data], ",
+                    "    \"SELECT DISTINCT P.NA_PDT_HRC_DIV_NMB#(lf)#(tab),P.NA_PDT_HRC_DIV_DSCR#(lf)#(tab),P.NA_PDT_HRC_DEPT_NMB#(lf)#(tab),P.NA_PDT_HRC_DEPT_DSCR#(lf)#(tab),P.NA_PDT_HRC_CLS_NMB#(lf)#(tab),P.NA_PDT_HRC_CLS_DSCR#(lf)#(tab),P.NA_PDT_HRC_CLS_KY::TEXT AS NA_PDT_HRC_CLS_KY#(lf)#(tab),COALESCE(RCD.KC_ID, 11) AS KC_ID#(lf)#(tab),COALESCE(RCD.KC_DESC, 'Rest of Business') AS KC_DESC#(lf)#(tab),CASE #(lf)#(tab)#(tab)WHEN TRIM(P.NA_PDT_HRC_DIV_NMB)= '6'#(lf)#(tab)#(tab)#(tab)OR TRIM(P.NA_PDT_HRC_CLS_NMB) = '296'#(lf)#(tab)#(tab)#(tab)THEN TRUE#(lf)#(tab)#(tab)ELSE FALSE#(lf)#(tab)#(tab)END AS DIV_6_FLAG#(lf)FROM RTL_RPT_PRD_DB.DWH_RPT.D_PDT_CV AS P#(lf)LEFT JOIN RTL_RPT_DEV_DB.ODS_UMT.REPORT_CODE_DATA_V AS RCD ON P.NA_PDT_HRC_CLS_NMB = RCD.CLASS_ID#(lf)#(tab)AND UPPER(TRIM(RCD.REPORT_CODE)) = 'PRODKEYCAT'#(lf)#(tab)AND RCD.KC_ID::INT <> 0#(lf)WHERE TRIM(P.NA_PDT_HRC_DEPT_NMB) NOT IN (#(lf)#(tab)#(tab)'0'#(lf)#(tab)#(tab),'-10'#(lf)#(tab)#(tab))#(lf)#(tab)AND UPPER(TRIM(P.NA_PDT_HRC_DEPT_NMB)) NOT LIKE 'DIV_DFLT_DEPT%'\", ",
+                    "    null, ",
+                    "    [EnableFolding = true]",
+                    "  ), ",
+                    "  #\"Renamed Columns\" = Table.RenameColumns(",
+                    "    Source, ",
+                    "    {",
+                    "      {\"NA_PDT_HRC_DIV_NMB\", \"Division ID\"}, ",
+                    "      {\"NA_PDT_HRC_DEPT_NMB\", \"Department ID\"}, ",
+                    "      {\"NA_PDT_HRC_DEPT_DSCR\", \"Department Description\"}, ",
+                    "      {\"NA_PDT_HRC_CLS_KY\", \"Class Key\"}, ",
+                    "      {\"NA_PDT_HRC_CLS_NMB\", \"Class ID\"}, ",
+                    "      {\"NA_PDT_HRC_CLS_DSCR\", \"Class Description\"}, ",
+                    "      {\"NA_PDT_HRC_DIV_DSCR\", \"Division Description\"}, ",
+                    "      {\"KC_ID\", \"Key Category ID\"}, ",
+                    "      {\"KC_DESC\", \"Key Category Description\"}, ",
+                    "      {\"DIV_6_FLAG\", \"Print Product Flag\"}",
+                    "    }",
+                    "  )",
+                    "in",
+                    "  #\"Renamed Columns\""
+                  ]
+                },
+                "annotations": [
+                  {
+                    "name": "BestPracticeAnalyzer_IgnoreRules",
+                    "value": "{\"RuleIDs\":[\"MINIMIZE_POWER_QUERY_TRANSFORMATIONS\"]}"
+                  }
+                ]
+              }
+            ],
+            "annotations": [
+              {
+                "name": "PBI_NavigationStepName",
+                "value": "Navigation"
+              },
+              {
+                "name": "PBI_ResultType",
+                "value": "Table"
+              }
+            ]
+          },
+          {
+            "name": "Fiscal Calendar Day",
+            "lineageTag": "63235d4f-2578-4249-a8eb-d19445aab7e9",
+            "columns": [
+              {
+                "name": "Day Key",
+                "dataType": "int64",
+                "isKey": true,
+                "sourceColumn": "Day Key",
+                "formatString": "#,##0",
+                "isAvailableInMdx": false,
+                "lineageTag": "03d926ac-3225-49b2-ae21-baae72151079",
+                "summarizeBy": "none",
+                "annotations": [
+                  {
+                    "name": "SummarizationSetBy",
+                    "value": "Automatic"
+                  },
+                  {
+                    "name": "PBI_FormatHint",
+                    "value": "{\"isGeneralNumber\":true}"
+                  }
+                ]
+              },
+              {
+                "name": "Last Year Day Key",
+                "dataType": "int64",
+                "isHidden": true,
+                "sourceColumn": "Last Year Day Key",
+                "formatString": "#,##0",
+                "isAvailableInMdx": false,
+                "lineageTag": "13357795-fff9-4259-838a-e4abbb5e8341",
+                "summarizeBy": "none",
+                "annotations": [
+                  {
+                    "name": "SummarizationSetBy",
+                    "value": "Automatic"
+                  },
+                  {
+                    "name": "PBI_FormatHint",
+                    "value": "{\"isGeneralNumber\":true}"
+                  },
+                  {
+                    "name": "BestPracticeAnalyzer_IgnoreRules",
+                    "value": "{\"RuleIDs\":[\"MARK_PRIMARY_KEYS\"]}"
+                  }
+                ]
+              },
+              {
+                "name": "Calendar Date",
+                "dataType": "dateTime",
+                "isHidden": true,
+                "sourceColumn": "Calendar Date",
+                "formatString": "m/d/yyyy",
+                "lineageTag": "6ae351e8-bb52-475c-80df-b2084f149a59",
+                "summarizeBy": "none",
+                "annotations": [
+                  {
+                    "name": "BestPracticeAnalyzer_IgnoreRules",
+                    "value": "{\"RuleIDs\":[\"ISAVAILABLEINMDX_FALSE_NONATTRIBUTE_COLUMNS\",\"DATECOLUMN_FORMATSTRING\",\"UNNECESSARY_COLUMNS\"]}"
+                  }
+                ]
+              },
+              {
+                "name": "Fiscal Period In Quarter Number",
+                "dataType": "int64",
+                "sourceColumn": "Fiscal Period In Quarter Number",
+                "formatString": "#,##0",
+                "lineageTag": "2388db58-ab94-4c74-b7fa-922ef50eafef",
+                "summarizeBy": "none",
+                "annotations": [
+                  {
+                    "name": "SummarizationSetBy",
+                    "value": "Automatic"
+                  }
+                ]
+              },
+              {
+                "name": "Fiscal Calendar Prior Week Indicator",
+                "dataType": "boolean",
+                "sourceColumn": "Fiscal Calendar Prior Week Indicator",
+                "lineageTag": "f2b5fb3e-dd2d-4940-a453-8a8b01956aa2",
+                "summarizeBy": "none",
+                "annotations": [
+                  {
+                    "name": "SummarizationSetBy",
+                    "value": "Automatic"
+                  }
+                ]
+              },
+              {
+                "name": "Fiscal Calendar Current Year Indicator",
+                "dataType": "boolean",
+                "sourceColumn": "Fiscal Calendar Current Year Indicator",
+                "lineageTag": "f4763851-ca6a-43fe-aa5f-c2b103407bd2",
+                "summarizeBy": "none",
+                "annotations": [
+                  {
+                    "name": "SummarizationSetBy",
+                    "value": "Automatic"
+                  }
+                ]
+              },
+              {
+                "name": "Fiscal Calendar Current Week Indicator",
+                "dataType": "boolean",
+                "sourceColumn": "Fiscal Calendar Current Week Indicator",
+                "lineageTag": "101bf6b0-073c-48ff-b9fe-5c709de947ce",
+                "summarizeBy": "none",
+                "annotations": [
+                  {
+                    "name": "SummarizationSetBy",
+                    "value": "Automatic"
+                  }
+                ]
+              },
+              {
+                "name": "Fiscal Calendar Current Quarter Indicator",
+                "dataType": "boolean",
+                "sourceColumn": "Fiscal Calendar Current Quarter Indicator",
+                "lineageTag": "e1196518-f29e-4a87-b0c9-48d0b859b48c",
+                "summarizeBy": "none",
+                "annotations": [
+                  {
+                    "name": "SummarizationSetBy",
+                    "value": "Automatic"
+                  }
+                ]
+              },
+              {
+                "name": "Fiscal Calendar Current Period Indicator",
+                "dataType": "boolean",
+                "sourceColumn": "Fiscal Calendar Current Period Indicator",
+                "lineageTag": "17e2c323-0a4e-4357-a101-58e116b1bec4",
+                "summarizeBy": "none",
+                "annotations": [
+                  {
+                    "name": "SummarizationSetBy",
+                    "value": "Automatic"
+                  }
+                ]
+              },
+              {
+                "name": "Fiscal Week In Period Number",
+                "dataType": "int64",
+                "sourceColumn": "Fiscal Week In Period Number",
+                "formatString": "#,##0",
+                "lineageTag": "89fad13a-0279-478b-bf9f-229fc7d24ff3",
+                "summarizeBy": "none",
+                "annotations": [
+                  {
+                    "name": "SummarizationSetBy",
+                    "value": "Automatic"
+                  }
+                ]
+              },
+              {
+                "name": "Fiscal Week In Quarter Number",
+                "dataType": "int64",
+                "isHidden": true,
+                "sourceColumn": "Fiscal Week In Quarter Number",
+                "formatString": "#,##0",
+                "isAvailableInMdx": false,
+                "lineageTag": "5489b099-e071-4442-9f6d-480b09ba9880",
+                "summarizeBy": "none",
+                "annotations": [
+                  {
+                    "name": "SummarizationSetBy",
+                    "value": "User"
+                  }
+                ]
+              },
+              {
+                "name": "Fiscal Week In Year Number",
+                "dataType": "int64",
+                "sourceColumn": "Fiscal Week In Year Number",
+                "formatString": "#,##0",
+                "lineageTag": "cf85ad31-db72-4878-bc44-b248903b66f4",
+                "summarizeBy": "none",
+                "annotations": [
+                  {
+                    "name": "SummarizationSetBy",
+                    "value": "User"
+                  }
+                ]
+              },
+              {
+                "name": "Fiscal Week Start Date",
+                "dataType": "dateTime",
+                "isHidden": true,
+                "sourceColumn": "Fiscal Week Start Date",
+                "formatString": "m/d/yyyy",
+                "isAvailableInMdx": false,
+                "lineageTag": "ef66f587-ef62-4147-9c4c-d6ba49ee91fc",
+                "summarizeBy": "none",
+                "annotations": [
+                  {
+                    "name": "BestPracticeAnalyzer_IgnoreRules",
+                    "value": "{\"RuleIDs\":[\"ISAVAILABLEINMDX_FALSE_NONATTRIBUTE_COLUMNS\",\"DATECOLUMN_FORMATSTRING\",\"UNNECESSARY_COLUMNS\"]}"
+                  }
+                ]
+              },
+              {
+                "name": "Fiscal Week End Date",
+                "dataType": "dateTime",
+                "isHidden": true,
+                "sourceColumn": "Fiscal Week End Date",
+                "formatString": "m/d/yyyy",
+                "isAvailableInMdx": false,
+                "lineageTag": "a1cf387d-695c-4e78-9c0b-ee1eae0818d8",
+                "summarizeBy": "none",
+                "annotations": [
+                  {
+                    "name": "BestPracticeAnalyzer_IgnoreRules",
+                    "value": "{\"RuleIDs\":[\"ISAVAILABLEINMDX_FALSE_NONATTRIBUTE_COLUMNS\",\"DATECOLUMN_FORMATSTRING\",\"UNNECESSARY_COLUMNS\"]}"
+                  }
+                ]
+              },
+              {
+                "name": "Fiscal Year",
+                "dataType": "int64",
+                "isHidden": true,
+                "sourceColumn": "Fiscal Year",
+                "formatString": "#,##0",
+                "isAvailableInMdx": false,
+                "lineageTag": "2a81efb0-fdc8-4789-b3e1-d2e221cccc8a",
+                "summarizeBy": "none",
+                "annotations": [
+                  {
+                    "name": "SummarizationSetBy",
+                    "value": "Automatic"
+                  },
+                  {
+                    "name": "PBI_FormatHint",
+                    "value": "{\"isGeneralNumber\":true}"
+                  },
+                  {
+                    "name": "BestPracticeAnalyzer_IgnoreRules",
+                    "value": "{\"RuleIDs\":[\"UNNECESSARY_COLUMNS\"]}"
+                  }
+                ]
+              },
+              {
+                "name": "Fiscal Period In Year",
+                "dataType": "int64",
+                "isHidden": true,
+                "sourceColumn": "Fiscal Period In Year",
+                "formatString": "#,##0",
+                "isAvailableInMdx": false,
+                "lineageTag": "40919114-19f7-4804-8d19-26aaa88cd0ff",
+                "summarizeBy": "none",
+                "annotations": [
+                  {
+                    "name": "SummarizationSetBy",
+                    "value": "Automatic"
+                  },
+                  {
+                    "name": "PBI_FormatHint",
+                    "value": "{\"isGeneralNumber\":true}"
+                  },
+                  {
+                    "name": "BestPracticeAnalyzer_IgnoreRules",
+                    "value": "{\"RuleIDs\":[\"UNNECESSARY_COLUMNS\"]}"
+                  }
+                ]
+              },
+              {
+                "name": "Fiscal Week In Quarter Count",
+                "dataType": "int64",
+                "isHidden": true,
+                "sourceColumn": "Fiscal Week In Quarter Count",
+                "formatString": "#,##0",
+                "isAvailableInMdx": false,
+                "lineageTag": "cc0b55a5-f8e4-4df2-9ebc-316bebc0752d",
+                "summarizeBy": "none",
+                "annotations": [
+                  {
+                    "name": "SummarizationSetBy",
+                    "value": "User"
+                  }
+                ]
+              },
+              {
+                "name": "Fiscal Week In Period Count",
+                "dataType": "int64",
+                "isHidden": true,
+                "sourceColumn": "Fiscal Week In Period Count",
+                "formatString": "#,##0",
+                "isAvailableInMdx": false,
+                "lineageTag": "efd19c9a-be49-4be1-b6e7-5d8409921dee",
+                "summarizeBy": "none",
+                "annotations": [
+                  {
+                    "name": "SummarizationSetBy",
+                    "value": "User"
+                  }
+                ]
+              },
+              {
+                "name": "Fiscal Week In Year Count",
+                "dataType": "int64",
+                "isHidden": true,
+                "sourceColumn": "Fiscal Week in Year Count",
+                "formatString": "#,##0",
+                "isAvailableInMdx": false,
+                "lineageTag": "ca485a2f-f435-4ebe-8c70-a7860896ff4f",
+                "summarizeBy": "none",
+                "annotations": [
+                  {
+                    "name": "SummarizationSetBy",
+                    "value": "User"
+                  }
+                ]
+              },
+              {
+                "name": "Fiscal Calendar Prior Period Indicator",
+                "dataType": "boolean",
+                "sourceColumn": "Fiscal Calendar Prior Period Indicator",
+                "lineageTag": "2af08027-0283-49b7-895a-e97272681d80",
+                "summarizeBy": "none",
+                "annotations": [
+                  {
+                    "name": "SummarizationSetBy",
+                    "value": "Automatic"
+                  }
+                ]
+              },
+              {
+                "name": "Fiscal Calendar Prior Quarter Indicator",
+                "dataType": "boolean",
+                "sourceColumn": "Fiscal Calendar Prior Quarter Indicator",
+                "lineageTag": "818a9336-8853-4f35-9895-94d12ad3d919",
+                "summarizeBy": "none",
+                "annotations": [
+                  {
+                    "name": "SummarizationSetBy",
+                    "value": "Automatic"
+                  }
+                ]
+              },
+              {
+                "name": "Fiscal Calendar Prior Year Indicator",
+                "dataType": "boolean",
+                "sourceColumn": "Fiscal Calendar Prior Year Indicator",
+                "lineageTag": "3cce2eba-efab-4a33-b5b0-d5916fe7096f",
+                "summarizeBy": "none",
+                "annotations": [
+                  {
+                    "name": "SummarizationSetBy",
+                    "value": "Automatic"
+                  }
+                ]
+              }
+            ],
+            "partitions": [
+              {
+                "name": "Fiscal Calendar Day",
+                "mode": "import",
+                "source": {
+                  "type": "m",
+                  "expression": [
+                    "let",
+                    "  Source = Value.NativeQuery(",
+                    "    Snowflake.Databases(",
+                    "      \"staplesusretail.east-us-2.azure.snowflakecomputing.com\", ",
+                    "      \"\" & Snowflake_Account_Warehouse_Name & \"\", ",
+                    "      [Role = \"\" & Snowflake_Account_Role_Name & \"\"]",
+                    "    ){[Name = \"RTL_RPT_PRD_DB\"]}[Data],",
+                    "    \"WITH CURRENT_FISCAL_YEAR#(lf)AS (#(lf)#(tab)SELECT FCD.FSC_YR#(lf)#(tab)FROM RTL_RPT_PRD_DB.DWH_RPT.D_FSC_CAL_DAY_CV AS FCD#(lf)#(tab)WHERE UPPER(TRIM(FCD.FSC_CAL_CURR_TM_IND)) = 'Y'#(lf)#(tab))#(lf)SELECT FCD.CAL_DT#(lf)#(tab),FCD.TM_KY#(lf)#(tab),FCD.FSC_WK_IN_PRD_NUM#(lf)#(tab),FCD.FSC_WK_STRT_DT#(lf)#(tab),FCD.FSC_WK_END_DT#(lf)#(tab),CASE #(lf)#(tab)#(tab)WHEN UPPER(TRIM(FCD.FSC_CAL_CURR_WK_IND)) = 'Y'#(lf)#(tab)#(tab)#(tab)THEN TRUE#(lf)#(tab)#(tab)ELSE FALSE#(lf)#(tab)#(tab)END AS FSC_CAL_CURR_WK_IND#(lf)#(tab),FCD.FSC_PRD_IN_QTR_NUM#(lf)#(tab),CASE #(lf)#(tab)#(tab)WHEN UPPER(TRIM(FCD.FSC_CAL_CURR_PRD_IND)) = 'Y'#(lf)#(tab)#(tab)#(tab)THEN TRUE#(lf)#(tab)#(tab)ELSE FALSE#(lf)#(tab)#(tab)END AS FSC_CAL_CURR_PRD_IND#(lf)#(tab),CASE #(lf)#(tab)#(tab)WHEN UPPER(TRIM(FCD.FSC_CAL_CURR_YR_IND)) = 'Y'#(lf)#(tab)#(tab)#(tab)THEN TRUE#(lf)#(tab)#(tab)ELSE FALSE#(lf)#(tab)#(tab)END AS FSC_CAL_CURR_YR_IND#(lf)#(tab),FCD.FSC_WK_IN_YR_NUM#(lf)#(tab),CASE #(lf)#(tab)#(tab)WHEN UPPER(TRIM(FCD.FSC_CAL_PR_WK_IND)) = 'Y'#(lf)#(tab)#(tab)#(tab)THEN TRUE#(lf)#(tab)#(tab)ELSE FALSE#(lf)#(tab)#(tab)END AS FSC_CAL_PR_WK_IND#(lf)#(tab),FCD.FSC_WK_IN_QTR_NUM#(lf)#(tab),CASE #(lf)#(tab)#(tab)WHEN UPPER(TRIM(FCD.FSC_CAL_CURR_QTR_IND)) = 'Y'#(lf)#(tab)#(tab)#(tab)THEN TRUE#(lf)#(tab)#(tab)ELSE FALSE#(lf)#(tab)#(tab)END AS FSC_CAL_CURR_QTR_IND#(lf)#(tab),FCD.FSC_WK_IN_PRD_CNT#(lf)#(tab),CASE #(lf)#(tab)#(tab)WHEN UPPER(TRIM(FCD.FSC_CAL_PR_PRD_IND)) = 'Y'#(lf)#(tab)#(tab)#(tab)THEN TRUE#(lf)#(tab)#(tab)ELSE FALSE#(lf)#(tab)#(tab)END AS FSC_CAL_PR_PRD_IND#(lf)#(tab),FCD.FSC_WK_IN_QTR_CNT#(lf)#(tab),CASE #(lf)#(tab)#(tab)WHEN UPPER(TRIM(FCD.FSC_CAL_PR_QTR_IND)) = 'Y'#(lf)#(tab)#(tab)#(tab)THEN TRUE#(lf)#(tab)#(tab)ELSE FALSE#(lf)#(tab)#(tab)END AS FSC_CAL_PR_QTR_IND#(lf)#(tab),FCD.FSC_WK_IN_YR_CNT#(lf)#(tab),CASE #(lf)#(tab)#(tab)WHEN UPPER(TRIM(FCD.FSC_CAL_PR_YR_IND)) = 'Y'#(lf)#(tab)#(tab)#(tab)THEN TRUE#(lf)#(tab)#(tab)ELSE FALSE#(lf)#(tab)#(tab)END AS FSC_CAL_PR_YR_IND#(lf)#(tab),CASE #(lf)#(tab)#(tab)WHEN FCD.TM_KY = 20231251#(lf)#(tab)#(tab)#(tab)THEN 99991211#(lf)#(tab)#(tab)WHEN FCD.TM_KY = 20231252#(lf)#(tab)#(tab)#(tab)THEN 99991212#(lf)#(tab)#(tab)WHEN FCD.TM_KY = 20231253#(lf)#(tab)#(tab)#(tab)THEN 99991213#(lf)#(tab)#(tab)WHEN FCD.TM_KY = 20231254#(lf)#(tab)#(tab)#(tab)THEN 99991214#(lf)#(tab)#(tab)WHEN FCD.TM_KY = 20231255#(lf)#(tab)#(tab)#(tab)THEN 99991215#(lf)#(tab)#(tab)WHEN FCD.TM_KY = 20231256#(lf)#(tab)#(tab)#(tab)THEN 99991216#(lf)#(tab)#(tab)WHEN FCD.TM_KY = 20231257#(lf)#(tab)#(tab)#(tab)THEN 99991217#(lf)#(tab)#(tab)ELSE FCD.COMP_TM_KY#(lf)#(tab)#(tab)END AS COMP_TM_KY#(lf)#(tab),FCD.FSC_PRD_IN_YR#(lf)#(tab),FCD.FSC_YR#(lf)FROM RTL_RPT_PRD_DB.DWH_RPT.D_FSC_CAL_DAY_CV AS FCD#(lf)INNER JOIN CURRENT_FISCAL_YEAR AS CFY ON FCD.FSC_YR >= CFY.FSC_YR - 2#(lf)#(tab)AND FCD.CAL_DT <= CURRENT_DATE\",",
+                    "    null,",
+                    "    [EnableFolding = true]",
+                    "  ),",
+                    "  #\"Renamed Columns\" = Table.RenameColumns(",
+                    "    Source,",
+                    "    {",
+                    "      {\"CAL_DT\", \"Calendar Date\"},",
+                    "      {\"TM_KY\", \"Day Key\"},",
+                    "      {\"FSC_WK_IN_PRD_NUM\", \"Fiscal Week In Period Number\"},",
+                    "      {\"FSC_CAL_CURR_WK_IND\", \"Fiscal Calendar Current Week Indicator\"},",
+                    "      {\"FSC_PRD_IN_QTR_NUM\", \"Fiscal Period In Quarter Number\"},",
+                    "      {\"FSC_CAL_CURR_PRD_IND\", \"Fiscal Calendar Current Period Indicator\"},",
+                    "      {\"FSC_CAL_CURR_YR_IND\", \"Fiscal Calendar Current Year Indicator\"},",
+                    "      {\"FSC_WK_IN_YR_NUM\", \"Fiscal Week In Year Number\"},",
+                    "      {\"FSC_CAL_PR_WK_IND\", \"Fiscal Calendar Prior Week Indicator\"},",
+                    "      {\"FSC_WK_IN_QTR_NUM\", \"Fiscal Week In Quarter Number\"},",
+                    "      {\"FSC_CAL_CURR_QTR_IND\", \"Fiscal Calendar Current Quarter Indicator\"},",
+                    "      {\"FSC_WK_IN_PRD_CNT\", \"Fiscal Week in Period Count\"},",
+                    "      {\"FSC_CAL_PR_PRD_IND\", \"Fiscal Calendar Prior Period Indicator\"},",
+                    "      {\"FSC_WK_IN_QTR_CNT\", \"Fiscal Week in Quarter Count\"},",
+                    "      {\"FSC_CAL_PR_QTR_IND\", \"Fiscal Calendar Prior Quarter Indicator\"},",
+                    "      {\"FSC_WK_IN_YR_CNT\", \"Fiscal Week in Year Count\"},",
+                    "      {\"FSC_CAL_PR_YR_IND\", \"Fiscal Calendar Prior Year Indicator\"},",
+                    "      {\"COMP_TM_KY\", \"Last Year Day Key\"},",
+                    "      {\"FSC_WK_STRT_DT\", \"Fiscal Week Start Date\"},",
+                    "      {\"FSC_WK_END_DT\", \"Fiscal Week End Date\"},",
+                    "      {\"FSC_PRD_IN_YR\", \"Fiscal Period In Year\"},",
+                    "      {\"FSC_YR\", \"Fiscal Year\"}",
+                    "    }",
+                    "  )",
+                    "in",
+                    "  #\"Renamed Columns\""
+                  ]
+                },
+                "annotations": [
+                  {
+                    "name": "BestPracticeAnalyzer_IgnoreRules",
+                    "value": "{\"RuleIDs\":[\"MINIMIZE_POWER_QUERY_TRANSFORMATIONS\"]}"
+                  }
+                ]
+              }
+            ],
+            "annotations": [
+              {
+                "name": "PBI_NavigationStepName",
+                "value": "Navigation"
+              },
+              {
+                "name": "PBI_ResultType",
+                "value": "Table"
+              },
+              {
+                "name": "BestPracticeAnalyzer_IgnoreRules",
+                "value": "{\"RuleIDs\":[\"DATE/CALENDAR_TABLES_SHOULD_BE_MARKED_AS_A_DATE_TABLE\"]}"
+              }
+            ]
+          },
+          {
+            "name": "Fiscal Calendar Period",
+            "lineageTag": "72d480fb-438f-4bfb-a420-f3f15ae50dd2",
+            "columns": [
+              {
+                "name": "Period Key",
+                "dataType": "int64",
+                "isHidden": true,
+                "isKey": true,
+                "sourceColumn": "Period Key",
+                "formatString": "#,##0",
+                "isAvailableInMdx": false,
+                "lineageTag": "c84ad564-c195-4247-aae6-c4839c4625e3",
+                "summarizeBy": "none",
+                "annotations": [
+                  {
+                    "name": "SummarizationSetBy",
+                    "value": "Automatic"
+                  }
+                ]
+              },
+              {
+                "name": "Last Year Period Key",
+                "dataType": "int64",
+                "isHidden": true,
+                "sourceColumn": "Last Year Period Key",
+                "formatString": "#,##0",
+                "isAvailableInMdx": false,
+                "lineageTag": "2d1435bc-2458-42a3-b6b5-777cdf8468c3",
+                "summarizeBy": "none",
+                "annotations": [
+                  {
+                    "name": "SummarizationSetBy",
+                    "value": "Automatic"
+                  },
+                  {
+                    "name": "UnderlyingDateTimeDataType",
+                    "value": "Date"
+                  },
+                  {
+                    "name": "PBI_FormatHint",
+                    "value": "{\"isDateTimeCustom\":true}"
+                  },
+                  {
+                    "name": "BestPracticeAnalyzer_IgnoreRules",
+                    "value": "{\"RuleIDs\":[\"MARK_PRIMARY_KEYS\"]}"
+                  }
+                ]
+              },
+              {
+                "name": "Fiscal Calendar Current Period Indicator",
+                "dataType": "boolean",
+                "isHidden": true,
+                "sourceColumn": "Fiscal Calendar Current Period Indicator",
+                "isAvailableInMdx": false,
+                "lineageTag": "8a0a2ce0-4870-4b43-b03c-05be8a679733",
+                "summarizeBy": "none",
+                "annotations": [
+                  {
+                    "name": "SummarizationSetBy",
+                    "value": "Automatic"
+                  }
+                ]
+              },
+              {
+                "name": "Fiscal Period Sequence Number",
+                "dataType": "int64",
+                "isHidden": true,
+                "sourceColumn": "Fiscal Period Sequence Number",
+                "isAvailableInMdx": false,
+                "lineageTag": "a603abd6-1cfc-468b-80f2-f5b339d8a18c",
+                "summarizeBy": "none",
+                "annotations": [
+                  {
+                    "name": "SummarizationSetBy",
+                    "value": "Automatic"
+                  },
+                  {
+                    "name": "PBI_FormatHint",
+                    "value": "{\"isGeneralNumber\":true}"
+                  }
+                ]
+              }
+            ],
+            "partitions": [
+              {
+                "name": "Fiscal Calendar Period",
+                "mode": "import",
+                "source": {
+                  "type": "m",
+                  "expression": [
+                    "let",
+                    "  Source = Value.NativeQuery(",
+                    "    Snowflake.Databases(",
+                    "      \"staplesusretail.east-us-2.azure.snowflakecomputing.com\",",
+                    "      \"\" & Snowflake_Account_Warehouse_Name & \"\",",
+                    "      [Role =\"\" & Snowflake_Account_Role_Name & \"\"]",
+                    "    ){[Name = \"RTL_RPT_PRD_DB\"]}[Data],",
+                    "    \"WITH CURRENT_FISCAL_YEAR#(lf)AS (#(lf)#(tab)SELECT FCD.FSC_YR#(lf)#(tab)#(tab),FCD.FSC_PRD_END_DT#(lf)#(tab)FROM RTL_RPT_PRD_DB.DWH_RPT.D_FSC_CAL_DAY_CV AS FCD#(lf)#(tab)WHERE UPPER(TRIM(FCD.FSC_CAL_CURR_TM_IND)) = 'Y'#(lf)#(tab))#(lf)#(tab),PERIOD#(lf)AS (#(lf)#(tab)SELECT FCPTY.TM_KY#(lf)#(tab)#(tab),FCPLY.TM_KY AS LY_TM_KY#(lf)#(tab)#(tab),FCPTY.FSC_PRD_STRT_DT#(lf)#(tab)#(tab),CASE #(lf)#(tab)#(tab)#(tab)WHEN UPPER(TRIM(FCPTY.FSC_CAL_CURR_PRD_IND)) = 'Y'#(lf)#(tab)#(tab)#(tab)#(tab)THEN TRUE#(lf)#(tab)#(tab)#(tab)ELSE FALSE#(lf)#(tab)#(tab)#(tab)END AS FSC_CAL_CURR_PRD_IND#(lf)#(tab)FROM RTL_RPT_PRD_DB.DWH_RPT.D_FSC_CAL_PRD_CV AS FCPTY#(lf)#(tab)LEFT JOIN RTL_RPT_PRD_DB.DWH_RPT.D_FSC_CAL_PRD_CV AS FCPLY ON FCPTY.PR_FSC_YR_CAL_DT = FCPLY.CAL_DT + 7#(lf)#(tab)INNER JOIN CURRENT_FISCAL_YEAR AS CFY ON 1 = 1#(lf)#(tab)#(tab)AND FCPTY.FSC_YEAR >= CFY.FSC_YR - 2#(lf)#(tab)#(tab)AND FCPTY.CAL_DT <= CFY.FSC_PRD_END_DT#(lf)#(tab)#(tab)AND FCPTY.FSC_YR_NUM = 2024#(lf)#(tab)#(tab)AND FCPTY.FSC_PRD_IN_YEAR <> 12#(lf)#(tab)#(lf)#(tab)UNION#(lf)#(tab)#(lf)#(tab)SELECT FCPTY.TM_KY#(lf)#(tab)#(tab),FCPLY.TM_KY AS LY_TM_KY#(lf)#(tab)#(tab),FCPTY.FSC_PRD_STRT_DT#(lf)#(tab)#(tab),CASE #(lf)#(tab)#(tab)#(tab)WHEN UPPER(TRIM(FCPTY.FSC_CAL_CURR_PRD_IND)) = 'Y'#(lf)#(tab)#(tab)#(tab)#(tab)THEN TRUE#(lf)#(tab)#(tab)#(tab)ELSE FALSE#(lf)#(tab)#(tab)#(tab)END AS FSC_CAL_CURR_PRD_IND#(lf)#(tab)FROM RTL_RPT_PRD_DB.DWH_RPT.D_FSC_CAL_PRD_CV AS FCPTY#(lf)#(tab)LEFT JOIN RTL_RPT_PRD_DB.DWH_RPT.D_FSC_CAL_PRD_CV AS FCPLY ON FCPTY.PR_FSC_YR_CAL_DT = FCPLY.CAL_DT#(lf)#(tab)INNER JOIN CURRENT_FISCAL_YEAR AS CFY ON FCPTY.FSC_YEAR >= CFY.FSC_YR - 2#(lf)#(tab)#(tab)AND FCPTY.CAL_DT <= CFY.FSC_PRD_END_DT#(lf)#(tab)#(tab)AND (#(lf)#(tab)#(tab)#(tab)FCPTY.TM_KY < 202401#(lf)#(tab)#(tab)#(tab)OR FCPTY.TM_KY > 202411#(lf)#(tab)#(tab)#(tab))#(lf)#(tab))#(lf)SELECT P.TM_KY#(lf)#(tab),P.LY_TM_KY#(lf)#(tab),ROW_NUMBER() OVER (#(lf)#(tab)#(tab)ORDER BY P.FSC_PRD_STRT_DT#(lf)#(tab)#(tab)) AS FSC_PRD_SEQ_NMB#(lf)#(tab),P.FSC_CAL_CURR_PRD_IND#(lf)FROM PERIOD AS P\", ",
+                    "    null,",
+                    "    [EnableFolding = true]",
+                    "  ),",
+                    "  #\"Renamed Columns\" = Table.RenameColumns(",
+                    "    Source,",
+                    "    {",
+                    "      {\"TM_KY\", \"Period Key\"},",
+                    "      {\"LY_TM_KY\", \"Last Year Period Key\"},",
+                    "      {\"FSC_PRD_SEQ_NMB\", \"Fiscal Period Sequence Number\"},",
+                    "      {\"FSC_CAL_CURR_PRD_IND\", \"Fiscal Calendar Current Period Indicator\"}",
+                    "    }",
+                    "  )",
+                    "in",
+                    "  #\"Renamed Columns\""
+                  ]
+                },
+                "annotations": [
+                  {
+                    "name": "BestPracticeAnalyzer_IgnoreRules",
+                    "value": "{\"RuleIDs\":[\"MINIMIZE_POWER_QUERY_TRANSFORMATIONS\"]}"
+                  }
+                ]
+              }
+            ],
+            "annotations": [
+              {
+                "name": "PBI_NavigationStepName",
+                "value": "Navigation"
+              },
+              {
+                "name": "PBI_ResultType",
+                "value": "Table"
+              },
+              {
+                "name": "BestPracticeAnalyzer_IgnoreRules",
+                "value": "{\"RuleIDs\":[\"DATE/CALENDAR_TABLES_SHOULD_BE_MARKED_AS_A_DATE_TABLE\"]}"
+              }
+            ]
+          },
+          {
+            "name": "Fiscal Calendar Day Timeframe - Weekly",
+            "lineageTag": "1d0b9ac9-1b24-477d-829c-a35cca5c42eb",
+            "columns": [
+              {
+                "name": "Indicator",
+                "dataType": "string",
+                "isHidden": true,
+                "sourceColumn": "Indicator",
+                "isAvailableInMdx": false,
+                "lineageTag": "0994335b-9902-4148-bdad-737f9001a96d",
+                "summarizeBy": "none",
+                "annotations": [
+                  {
+                    "name": "SummarizationSetBy",
+                    "value": "Automatic"
+                  }
+                ]
+              },
+              {
+                "name": "Day Key",
+                "dataType": "int64",
+                "isHidden": true,
+                "sourceColumn": "Day Key",
+                "formatString": "###0",
+                "isAvailableInMdx": false,
+                "lineageTag": "a50f00d4-8568-4ad3-89d8-f314e4a22dd0",
+                "summarizeBy": "none",
+                "annotations": [
+                  {
+                    "name": "SummarizationSetBy",
+                    "value": "Automatic"
+                  },
+                  {
+                    "name": "PBI_FormatHint",
+                    "value": "{\"isGeneralNumber\":true}"
+                  }
+                ]
+              },
+              {
+                "name": "Week Key",
+                "dataType": "int64",
+                "isHidden": true,
+                "sourceColumn": "Week Key",
+                "formatString": "###0",
+                "isAvailableInMdx": false,
+                "lineageTag": "4d685f0c-39e0-48f4-9a57-62f0dbd6087c",
+                "summarizeBy": "none",
+                "annotations": [
+                  {
+                    "name": "SummarizationSetBy",
+                    "value": "Automatic"
+                  },
+                  {
+                    "name": "PBI_FormatHint",
+                    "value": "{\"isGeneralNumber\":true}"
+                  },
+                  {
+                    "name": "BestPracticeAnalyzer_IgnoreRules",
+                    "value": "{\"RuleIDs\":[\"UNNECESSARY_COLUMNS\"]}"
+                  }
+                ]
+              },
+              {
+                "name": "Period Key",
+                "dataType": "int64",
+                "isHidden": true,
+                "sourceColumn": "Period Key",
+                "formatString": "#,##0",
+                "isAvailableInMdx": false,
+                "lineageTag": "904d5bc5-63e1-4af9-8cdf-eba8a4eab507",
+                "summarizeBy": "none",
+                "annotations": [
+                  {
+                    "name": "SummarizationSetBy",
+                    "value": "Automatic"
+                  },
+                  {
+                    "name": "PBI_FormatHint",
+                    "value": "{\"isGeneralNumber\":true}"
+                  },
+                  {
+                    "name": "BestPracticeAnalyzer_IgnoreRules",
+                    "value": "{\"RuleIDs\":[\"UNNECESSARY_COLUMNS\"]}"
+                  }
+                ]
+              },
+              {
+                "name": "Calendar Date",
+                "dataType": "dateTime",
+                "sourceColumn": "Calendar Date",
+                "formatString": "m/d/yyyy",
+                "lineageTag": "8ed9d2f9-3086-40e3-bd6a-b76eadf55878",
+                "summarizeBy": "none",
+                "annotations": [
+                  {
+                    "name": "BestPracticeAnalyzer_IgnoreRules",
+                    "value": "{\"RuleIDs\":[\"DATECOLUMN_FORMATSTRING\",\"REMOVE_REDUNDANT_COLUMNS_IN_RELATED_TABLES\"]}"
+                  }
+                ]
+              },
+              {
+                "type": "calculated",
+                "name": "Timeframe",
+                "dataType": "string",
+                "isDataTypeInferred": true,
+                "expression": [
+                  "",
+                  "SWITCH (",
+                  "    'Fiscal Calendar Day Timeframe - Weekly'[Indicator],",
+                  "    \"PD\", \"Prior Day\",",
+                  "    \"WTD\", \"Week to Date\",",
+                  "    \"PTD\", \"Period to Date\",",
+                  "    \"QTD\", \"Quarter to Date\",",
+                  "    \"YTD\", \"Year to Date\",",
+                  "    \"PW\", \"Prior Week\",",
+                  "    \"PRIOR_PERIOD\", \"Prior Period\",",
+                  "    \"PRIOR_QUARTER\", \"Prior Quarter\",",
+                  "    \"PRIOR_YEAR\", \"Prior Year\"",
+                  ")",
+                  ""
+                ],
+                "sortByColumn": "Sort Indicator",
+                "lineageTag": "c6d18dc7-96ee-4829-8301-1fd339a8cc76",
+                "summarizeBy": "none"
+              },
+              {
+                "type": "calculated",
+                "name": "Sort Indicator",
+                "dataType": "int64",
+                "isDataTypeInferred": true,
+                "isHidden": true,
+                "expression": [
+                  "SWITCH (",
+                  "    'Fiscal Calendar Day Timeframe - Weekly'[Indicator],",
+                  "    \"PD\", 0,",
+                  "    \"WTD\", 1,",
+                  "    \"PW\", 2,",
+                  "    \"PTD\", 3,",
+                  "    \"QTD\", 4,",
+                  "    \"YTD\", 5,",
+                  "    \"PRIOR_PERIOD\", 6,",
+                  "    \"PRIOR_QUARTER\", 7,",
+                  "    \"PRIOR_YEAR\", 8,",
+                  "    \"PD vs WTD\", 9,",
+                  "    \"PD vs Chain\", 10,",
+                  "    \"WTD vs Chain\", 11",
+                  ")"
+                ],
+                "lineageTag": "3bfceb39-7e79-4641-9492-c6d427a5ca53",
+                "summarizeBy": "none"
+              },
+              {
+                "type": "calculated",
+                "name": "Business Health Indicator",
+                "dataType": "string",
+                "isDataTypeInferred": true,
+                "expression": [
+                  "SWITCH(",
+                  "    'Fiscal Calendar Day Timeframe - Weekly'[Indicator],",
+                  "    \"PD\", \"PD\",",
+                  "    \"WTD\", \"WTD\",",
+                  "    \"PTD\", \"PTD\",",
+                  "    \"YTD\", \"YTD\",",
+                  "    \"PD vs WTD\", \"PD vs WTD\",",
+                  "    \"PD vs Chain\", \"PD vs Chain\",",
+                  "    \"WTD vs Chain\", \"WTD vs Chain\"",
+                  ")"
+                ],
+                "sortByColumn": "Sort Indicator",
+                "lineageTag": "0cde8468-2ca8-416b-a2ac-3fe75bf6dac3"
+              }
+            ],
+            "partitions": [
+              {
+                "name": "Fiscal Calendar Day Timeframe - Weekly",
+                "mode": "import",
+                "source": {
+                  "type": "m",
+                  "expression": [
+                    "let",
+                    "  Source = Value.NativeQuery(",
+                    "    Snowflake.Databases(",
+                    "      \"staplesusretail.east-us-2.azure.snowflakecomputing.com\", ",
+                    "      \"\" & Snowflake_Account_Warehouse_Name & \"\", ",
+                    "      [Role = \"\" & Snowflake_Account_Role_Name & \"\"]",
+                    "    ){[Name = \"RTL_RPT_PRD_DB\"]}[Data], ",
+                    "    \"WITH CURRENT_FISCAL_YEAR#(lf)AS (#(lf)#(tab)SELECT FCD.FSC_YR#(lf)#(tab)FROM RTL_RPT_PRD_DB.DWH_RPT.D_FSC_CAL_DAY_CV AS FCD#(lf)#(tab)WHERE UPPER(TRIM(FCD.FSC_CAL_CURR_TM_IND)) = 'Y'#(lf)#(tab))#(lf)SELECT FCDT.CAL_DT#(lf)#(tab),FCDT.IND#(lf)#(tab),FCDT.TM_KY#(lf)#(tab),FCD.FSC_WK_TM_KY#(lf)#(tab),FCD.FSC_PRD_TM_KY#(lf)FROM RTL_RPT_PRD_DB.DWH_RPT.D_FSC_CAL_DAY_TRF_CV AS FCDT#(lf)INNER JOIN RTL_RPT_PRD_DB.DWH_RPT.D_FSC_CAL_DAY_CV AS FCD ON FCDT.TM_KY = FCD.TM_KY#(lf)#(tab)AND UPPER(TRIM(FCDT.IND)) NOT LIKE '%LLY'#(lf)INNER JOIN CURRENT_FISCAL_YEAR AS CFY ON FCD.FSC_YR >= CFY.FSC_YR - 2#(lf)#(tab)AND FCD.CAL_DT <= CURRENT_DATE#(lf)#(lf)UNION ALL#(lf)#(lf)SELECT NULL AS CAL_DT#(lf)#(tab),'PD vs WTD' AS IND#(lf)#(tab),NULL AS TM_KY#(lf)#(tab),NULL AS FSC_WK_TM_KY#(lf)#(tab),NULL AS FSC_PRD_TM_KY#(lf)FROM DUAL#(lf)#(lf)UNION ALL#(lf)#(lf)SELECT NULL AS CAL_DT#(lf)#(tab),'PD vs Chain' AS IND#(lf)#(tab),NULL AS TM_KY#(lf)#(tab),NULL AS FSC_WK_TM_KY#(lf)#(tab),NULL AS FSC_PRD_TM_KY#(lf)FROM DUAL#(lf)#(lf)UNION ALL#(lf)#(lf)SELECT NULL AS CAL_DT#(lf)#(tab),'WTD vs Chain' AS IND#(lf)#(tab),NULL AS TM_KY#(lf)#(tab),NULL AS FSC_WK_TM_KY#(lf)#(tab),NULL AS FSC_PRD_TM_KY#(lf)FROM DUAL\",",
+                    "    null, ",
+                    "    [EnableFolding = true]",
+                    "  ), ",
+                    "  #\"Renamed Columns\" = Table.RenameColumns(",
+                    "    Source, ",
+                    "    {",
+                    "      {\"CAL_DT\", \"Calendar Date\"}, ",
+                    "      {\"IND\", \"Indicator\"}, ",
+                    "      {\"TM_KY\", \"Day Key\"}, ",
+                    "      {\"FSC_WK_TM_KY\", \"Week Key\"}, ",
+                    "      {\"FSC_PRD_TM_KY\", \"Period Key\"}",
+                    "    }",
+                    "  )",
+                    "in",
+                    "  #\"Renamed Columns\""
+                  ]
+                },
+                "annotations": [
+                  {
+                    "name": "BestPracticeAnalyzer_IgnoreRules",
+                    "value": "{\"RuleIDs\":[\"MINIMIZE_POWER_QUERY_TRANSFORMATIONS\"]}"
+                  }
+                ]
+              }
+            ],
+            "annotations": [
+              {
+                "name": "PBI_NavigationStepName",
+                "value": "Navigation"
+              },
+              {
+                "name": "PBI_ResultType",
+                "value": "Table"
+              },
+              {
+                "name": "BestPracticeAnalyzer_IgnoreRules",
+                "value": "{\"RuleIDs\":[\"DATE/CALENDAR_TABLES_SHOULD_BE_MARKED_AS_A_DATE_TABLE\"]}"
+              }
+            ]
+          }
+        ],
+        "relationships": [
+          {
+            "name": "4f3a8ea3-c241-4d8f-8190-60af7c3719bf",
+            "fromTable": "Fiscal Calendar Day Timeframe - Weekly",
+            "fromColumn": "Day Key",
+            "toTable": "Fiscal Calendar Day",
+            "toColumn": "Day Key",
+            "crossFilteringBehavior": "bothDirections",
+            "annotations": [
+              {
+                "name": "BestPracticeAnalyzer_IgnoreRules",
+                "value": "{\"RuleIDs\":[\"CHECK_IF_BI-DIRECTIONAL_AND_MANY-TO-MANY_RELATIONSHIPS_ARE_VALID\"]}"
+              }
+            ]
+          },
+          {
+            "name": "3602b2b5-7037-418f-aaf4-302c56ecca77",
+            "fromTable": "Fiscal Calendar Day Timeframe - Weekly",
+            "fromColumn": "Period Key",
+            "toTable": "Fiscal Calendar Period",
+            "toColumn": "Period Key",
+            "crossFilteringBehavior": "bothDirections",
+            "annotations": [
+              {
+                "name": "BestPracticeAnalyzer_IgnoreRules",
+                "value": "{\"RuleIDs\":[\"CHECK_IF_BI-DIRECTIONAL_AND_MANY-TO-MANY_RELATIONSHIPS_ARE_VALID\"]}"
+              }
+            ]
+          },
+          {
+            "name": "b7e49c85-bd47-4a0d-b827-c7f00407e5f6",
+            "fromTable": "Fiscal Calendar Day Timeframe - Weekly",
+            "fromColumn": "Week Key",
+            "toTable": "Fiscal Calendar Week",
+            "toColumn": "Week Key",
+            "crossFilteringBehavior": "bothDirections",
+            "annotations": [
+              {
+                "name": "BestPracticeAnalyzer_IgnoreRules",
+                "value": "{\"RuleIDs\":[\"CHECK_IF_BI-DIRECTIONAL_AND_MANY-TO-MANY_RELATIONSHIPS_ARE_VALID\"]}"
+              }
+            ]
+          }
+        ],
+        "cultures": [
+          {
+            "name": "en-IN",
+            "linguisticMetadata": {
+              "content": {
+                "Version": "1.0.0",
+                "Language": "en-US",
+                "DynamicImprovement": "HighConfidence"
+              },
+              "contentType": "json"
+            }
+          }
+        ],
+        "expressions": [
+          {
+            "name": "RangeEnd",
+            "description": "Refresh End Time",
+            "kind": "m",
+            "expression": "#datetime(2023, 3, 29, 0, 0, 0) meta [IsParameterQuery=true, Type=\"DateTime\", IsParameterQueryRequired=true]",
+            "lineageTag": "9cf3d12c-6fbb-4c96-84ef-b90c9604fb3a",
+            "annotations": [
+              {
+                "name": "PBI_ResultType",
+                "value": "DateTime"
+              }
+            ]
+          },
+          {
+            "name": "RangeStart",
+            "description": "Refresh Start Time",
+            "kind": "m",
+            "expression": "#datetime(2023, 1, 1, 0, 0, 0) meta [IsParameterQuery=true, Type=\"DateTime\", IsParameterQueryRequired=true]",
+            "lineageTag": "96295134-1b5a-43c1-8a34-b1ee6c51422c",
+            "annotations": [
+              {
+                "name": "PBI_ResultType",
+                "value": "DateTime"
+              }
+            ]
+          },
+          {
+            "name": "Snowflake_Account_Role_Name",
+            "kind": "m",
+            "expression": "\"POWERBI_DEV_RL\" meta [IsParameterQuery = true, IsParameterQueryRequired = true, Type = \"Text\"]",
+            "lineageTag": "2d1adc4c-87de-4d13-8bec-c4546aaf86c0",
+            "annotations": [
+              {
+                "name": "PBI_NavigationStepName",
+                "value": "Navigation"
+              },
+              {
+                "name": "PBI_ResultType",
+                "value": "Text"
+              }
+            ]
+          },
+          {
+            "name": "Snowflake_Account_Warehouse_Name",
+            "kind": "m",
+            "expression": "\"POWERBI_RDW_DEV_WH\" meta [IsParameterQuery = true, IsParameterQueryRequired = true, Type = \"Text\"]",
+            "lineageTag": "bb66d3b6-c46c-4d39-84d8-4b3512f6033c",
+            "annotations": [
+              {
+                "name": "PBI_NavigationStepName",
+                "value": "Navigation"
+              },
+              {
+                "name": "PBI_ResultType",
+                "value": "Text"
+              }
+            ]
+          }
+        ],
+        "annotations": [
+          {
+            "name": "PBI_QueryOrder",
+            "value": "[\"Missed Punches\",\"Location\",\"Measure\",\"Fiscal Calendar Week\"]"
+          },
+          {
+            "name": "__PBI_TimeIntelligenceEnabled",
+            "value": "0"
+          },
+          {
+            "name": "PBIDesktopVersion",
+            "value": "2.115.663.0"
+          },
+          {
+            "name": "__BNorm",
+            "value": "1"
+          },
+          {
+            "name": "BestPracticeAnalyzer_IgnoreRules",
+            "value": "{\"RuleIDs\":[\"OBJECTS_WITH_NO_DESCRIPTION\"]}"
+          },
+          {
+            "name": "BestPracticeAnalyzer_ExternalRuleFiles",
+            "value": "[\"C:\\\\Users\\\\Administrator\\\\Downloads\\\\BPA (3).json\"]"
+          },
+          {
+            "name": "__TEdtr",
+            "value": "1"
+          }
+        ]
+      }
+    }
+  }
+}
