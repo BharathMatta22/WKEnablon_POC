@@ -15,11 +15,11 @@ jobs:
         run: |
           # Generate Bim file using XMLA file
           $PBIDataset = "aa.xmla"
-          $BimOutput = "Model.bim"
+          $BimOutput = "output.bim"
           # Find the TabularEditor.exe file within the current directory.
           $TabularEditor = "D:\a\WKEnablon_POC\WKEnablon_POC\TabularEditor.exe" # assuming it is in the root of the repository.
 
           # Run TabularEditor to generate .bim file
           & $TabularEditor $PBIDataset -B $BimOutput
           # Display the path of the generated Model.bim file
-          Write-Host "Model.bim file path: $(Get-Location)\$BimOutput"
+          Write-Host "output.bim file path: $(Get-Location)\$BimOutput"
