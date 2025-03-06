@@ -27,7 +27,7 @@ jobs:
           $BimOutput = ".\build-artifacts\Model.bim" # Path from the staging directory
 
           # Find the TabularEditor.exe file within the current directory.
-          $TabularEditor = "TabularEditor.exe" # Assuming it is in the root of the repository.
+          $TabularEditor = "D:\a\WKEnablon_POC\WKEnablon_POC\TabularEditor.exe" # Assuming it is in the root of the repository.
 
           # Run TabularEditor to generate .bim file
           & $TabularEditor $PBIDataset -B $BimOutput
