@@ -16,10 +16,23 @@ jobs:
           # Generate Bim file using XMLA file
           $PBIDataset = "aa.xmla"
           $BimOutput = "output.bim"
+
           # Find the TabularEditor.exe file within the current directory.
           $TabularEditor = "D:\a\WKEnablon_POC\WKEnablon_POC\TabularEditor.exe" # assuming it is in the root of the repository.
 
           # Run TabularEditor to generate .bim file
           & $TabularEditor $PBIDataset -B $BimOutput
-          # Display the path of the generated Model.bim file
-          Write-Host "output.bim file path: $(Get-Location)\$BimOutput"
+
+          # Get the full path of the created BIM file and print it.
+          $FullPath = Get-Item -Path $BimOutput | Select-Object -ExpandProperty FullName
+          Write-Host "BIM file created at: $FullPath"
+
+      - name: Verify BIM file exists
+        shell: pwsh
+        run: |
+          if (Test-Path -Path "output.bim") {
+            Write-Host "BIM file exists in the current directory."
+          } else {
+            Write-Error "BIM file was not created."
+            exit 1 # Exit with error code if the file does not exist.
+          }
