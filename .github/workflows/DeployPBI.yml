@@ -16,8 +16,8 @@ jobs:
         shell: pwsh  # Specifies using PowerShell
         run: |
           # Generate Bim file using XMLA file
-          $PBIDataset = ".\aa.xmla"
-          $BimOutput = ".\Model.bim"
+          $PBIDataset = "aa.xmla"
+          $BimOutput = "Model.bim"
           $TabularEditor = "D:\a\WKEnablon_POC\WKEnablon_POC\TabularEditor.exe"
  
           # Run TabularEditor to generate .bim file
