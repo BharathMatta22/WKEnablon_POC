@@ -21,3 +21,8 @@ jobs:
 
           # Run TabularEditor to generate .bim file
           & $TabularEditor $PBIDataset -B $BimOutput
+          
+      - name: List files in temp directory (Windows)
+        shell: pwsh
+        run: |
+          Get-ChildItem -Path "D:\a\_temp\8fef218b-3ada-4fe5-9dbe-65ce078f3aa3" -Recurse
