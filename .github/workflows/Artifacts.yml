@@ -1,0 +1,33 @@
+name: Build and Stage Artifacts
+
+on: [workflow_dispatch]
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Create staging directory
+        run: mkdir build_artifacts
+
+      - name: Build your application (replace with your build steps)
+        run: |
+          # Example: Compile your code
+          echo "Building..."
+          # Replace with your actual build commands
+          echo "Build complete."
+
+      - name: Copy artifacts to staging directory (replace with your artifact paths)
+        run: |
+          # Example: Copy build output to staging
+          cp your_build_output.txt build_artifacts/
+          cp another_artifact.zip build_artifacts/
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: build-artifacts
+          path: build_artifacts
