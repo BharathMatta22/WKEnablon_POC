@@ -8,15 +8,15 @@ jobs:
 
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v4  # Checks out the repository
+        uses: actions/checkout@v3  # Checks out the repository
 
       - name: Generate Bim file using XMLA file
         shell: pwsh  # Specifies using PowerShell
         run: |
           # Generate Bim file using XMLA file
-          $PBIDataset = "${{ github.workspace }}\aa.xmla"
-          $BimOutput = "${{ github.workspace }}\Model.bim"
-          $TabularEditor = "${{ github.workspace }}\TabularEditor.exe"
+          $PBIDataset = ".\aa.xmla"
+          $BimOutput = ".\Model.bim"
+          $TabularEditor = "D:\a\WKEnablon_POC\WKEnablon_POC\TabularEditor.exe"
 
           # Run TabularEditor to generate .bim file
           $TabularEditor $PBIDataset -B $BimOutput
