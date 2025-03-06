@@ -11,20 +11,13 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Create staging directory
-        run: mkdir build_artifacts
+        run: mkdir build-artifacts
 
-      - name: Build your application (replace with your build steps)
-        run: |
-          # Example: Compile your code
-          echo "Building..."
-          # Replace with your actual build commands
-          echo "Build complete."
-
-      - name: Copy artifacts to staging directory (replace with your artifact paths)
+      - name: Copy artifacts to staging directory
         run: |
           # Example: Copy build output to staging
-          cp aa.xmla build_artifacts/
-          cp Model.bim build_artifacts/
+          copy aa.xmla build-artifacts\aa.xmla
+          copy Model.bim build-artifacts\Model.bim
 
       - name: Generate Bim file using XMLA file
         shell: pwsh
@@ -34,7 +27,7 @@ jobs:
           $BimOutput = ".\build-artifacts\Model.bim" # Path from the staging directory
 
           # Find the TabularEditor.exe file within the current directory.
-          $TabularEditor = "D:\a\WKEnablon_POC\WKEnablon_POC\TabularEditor.exe" # assuming it is in the root of the repository.
+          $TabularEditor = "TabularEditor.exe" # Assuming it is in the root of the repository.
 
           # Run TabularEditor to generate .bim file
           & $TabularEditor $PBIDataset -B $BimOutput
