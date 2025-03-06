@@ -1,9 +1,9 @@
-name: Build and Stage Artifacts
+name: Artifacts
 
 on: [workflow_dispatch]
 
 jobs:
-  build:
+  deploy:
     runs-on: windows-latest
 
     steps:
