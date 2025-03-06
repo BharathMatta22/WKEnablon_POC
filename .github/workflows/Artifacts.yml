@@ -27,7 +27,7 @@ jobs:
           cp another_artifact.zip build_artifacts/
 
       - name: Upload artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: build-artifacts
           path: build_artifacts
