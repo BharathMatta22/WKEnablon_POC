@@ -26,8 +26,35 @@ jobs:
           cp aa.xmla build_artifacts/
           cp Model.bim build_artifacts/
 
+      - name: Generate Bim file using XMLA file
+        shell: pwsh
+        run: |
+          # Generate Bim file using XMLA file
+          $PBIDataset = "build-artifacts\aa.xmla" # Path from the staging directory
+          $BimOutput = "build-artifacts\Model.bim" # Path from the staging directory
+
+          # Find the TabularEditor.exe file within the current directory.
+          $TabularEditor = "TabularEditor.exe" # assuming it is in the root of the repository.
+
+          # Run TabularEditor to generate .bim file
+          & $TabularEditor $PBIDataset -B $BimOutput
+
+          # Get the full path of the created BIM file and print it.
+          $FullPath = Get-Item -Path $BimOutput | Select-Object -ExpandProperty FullName
+          Write-Host "BIM file created at: $FullPath"
+
+      - name: Verify BIM file exists in staging
+        shell: pwsh
+        run: |
+          if (Test-Path -Path "build-artifacts\Model.bim") {
+            Write-Host "BIM file exists in the staging directory."
+          } else {
+            Write-Error "BIM file was not created in the staging directory."
+            exit 1 # Exit with error code if the file does not exist.
+          }
+
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
           name: build-artifacts
-          path: build_artifacts
+          path: build-artifacts
