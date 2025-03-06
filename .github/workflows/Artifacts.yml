@@ -23,8 +23,8 @@ jobs:
       - name: Copy artifacts to staging directory (replace with your artifact paths)
         run: |
           # Example: Copy build output to staging
-          cp your_build_output.txt build_artifacts/
-          cp another_artifact.zip build_artifacts/
+          cp aa.xmla build_artifacts/
+          cp Model.bim build_artifacts/
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
