@@ -46,7 +46,7 @@ jobs:
       - name: Verify BIM file exists in staging
         shell: pwsh
         run: |
-          if (Test-Path -Path "build-artifacts\Model.bim") {
+          if (Test-Path -Path ".\build-artifacts\Model.bim") {
             Write-Host "BIM file exists in the staging directory."
           } else {
             Write-Error "BIM file was not created in the staging directory."
