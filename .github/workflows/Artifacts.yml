@@ -30,8 +30,8 @@ jobs:
         shell: pwsh
         run: |
           # Generate Bim file using XMLA file
-          $PBIDataset = "build-artifacts\aa.xmla" # Path from the staging directory
-          $BimOutput = "build-artifacts\Model.bim" # Path from the staging directory
+          $PBIDataset = ".\build-artifacts\aa.xmla" # Path from the staging directory
+          $BimOutput = ".\build-artifacts\Model.bim" # Path from the staging directory
 
           # Find the TabularEditor.exe file within the current directory.
           $TabularEditor = "D:\a\WKEnablon_POC\WKEnablon_POC\TabularEditor.exe" # assuming it is in the root of the repository.
